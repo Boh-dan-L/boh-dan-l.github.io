@@ -86,3 +86,4 @@ export const properties = [
     address: "Вул. Якутська ",
   },
 ];
+
