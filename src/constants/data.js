@@ -46,7 +46,7 @@ export const properties = [
     imageUrl2:
       "../img/Hidroisolation-emotsiya/IMG_1496.jpg",
     imageUrl3:
-      "../img/Hidroisolation-emotsiya/IMG_1497.jpg",
+      "../img/Hidroisolation-emotsiya/IMG_1497.png",
     address: "Підземна гідроізоляція ЖК Емоція",
   },
   {
