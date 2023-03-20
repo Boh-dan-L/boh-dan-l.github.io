@@ -1,0 +1,122 @@
+
+
+.menu {
+    position: absolute;
+    position: fixed;
+    padding: 90px 15px 0;
+    width: 100vw;
+    height: 100vh;
+    background:#195F85;
+    transform: translateX(100%);
+    transition: 0.3s;
+    z-index: 50;
+    backdrop-filter: blur(4px);
+
+    @media (min-width: 935px) {
+        height: 65px;
+        background: transparent;
+        // box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        backdrop-filter: blur(0px);
+        transform: translateX(0);
+        padding: 18px 2% 0;
+    }
+
+    @media (min-width: 1024px) {
+        padding: 25px 3% 0;
+    }
+
+
+    &__view {
+        transform: translateX(0);
+        transition: 00.3s;
+    }
+
+    &__content {
+        text-align: center;
+        text-transform: uppercase;
+
+
+        &--a {
+            font-family:'Barlow', sans-serif;
+            // font-style: bold;
+            cursor: pointer;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 29px;
+            text-align: center;
+            color: white;
+            position: relative;
+            text-decoration: none;
+            --b: 0.1em;   /* the thickness of the line */
+            --c: #fff; /* the color */
+            color: #ffff;
+            padding-block: var(--b);
+            background:
+                linear-gradient(var(--c) 50%,#000 0) 0% calc(100% - var(--_p,0%))/100% 200%,
+                linear-gradient(var(--c) 0 0) 0% var(--_p,0%)/var(--_p,0%) var(--b) no-repeat;
+            -webkit-background-clip: text,padding-box;
+                    background-clip: text,padding-box;
+            transition: .3s var(--_s,0s) linear,background-size .3s calc(.3s - var(--_s,0s));
+
+            @media (min-width: 575px) {
+                font-size: 18px;
+            }
+
+            @media (min-width: 1116px) {
+                font-size: 22px;
+            }
+
+            &:hover {
+                --_p: 100%;
+                --_s: .3s;
+            }
+        }
+
+        // &.active &--a {
+        //     --_p: 100%;
+        //     --_s: .3s;
+        //     color: red;
+        // }
+
+        ul {
+
+            @media (min-width: 935px) {
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
+            }
+            @media (min-width: 1210px) {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+
+        &--li {
+            margin-bottom: 45px;
+
+        @media (min-width: 935px) {
+            margin-left: 27px;
+            z-index: 70;
+            margin-bottom: 0;
+        }
+        }
+    }
+}
+
+.blur {
+display: none;
+    @media (min-width: 935px) {
+    display: block;
+    width: 100vw;
+    height: 65px;
+    background: transparent;
+    padding: 18px 5% 0;
+    position: absolute;
+    position: fixed;
+    top: 0;
+    right: 0;
+    }
+}
+
+

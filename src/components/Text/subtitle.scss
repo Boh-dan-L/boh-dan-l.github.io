@@ -1,0 +1,21 @@
+
+
+.subtitle {
+    font-family: 'Barlow', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    color: #FFFFFF;
+
+    @media (min-width: 575px) {
+        font-size: 20px;
+        line-height: 31px;
+    }
+
+    @media (min-width: 1024px) {
+        font-size: 26px;
+    }
+
+}

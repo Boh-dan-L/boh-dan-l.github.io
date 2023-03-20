@@ -1,0 +1,108 @@
+
+
+.footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 224px;
+    background-image: url(../../img/footer.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    box-shadow: 0px -3px 4px rgba(0, 0, 0, 0.25);
+    margin-top: 107px;
+
+    &__title {
+        margin: 30px 0 20px;
+
+        .title {
+            color: #fff;
+        }
+    }
+
+    &__tell, &__mail {
+        margin: 15px 0 0;
+
+        @media (min-width: 1024px) {
+            margin: 20px 0 0;
+        }
+
+
+        &--namb, &--text{
+            display: block;
+            font-family: 'Barlow', sans-serif;
+            font-style: normal;
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 19px;
+            text-align: center;
+            color: #FFFFFF;
+            margin-left: 3px;
+            text-decoration: none;
+        }
+    }
+
+    &__icons {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+
+        @media (min-width: 1024px) {
+            margin-top: 15px;
+        }
+
+        &--telega, &--facebook, &--viber {
+            text-decoration: none;
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            color: #fff;
+            svg{
+                width: 20px;
+                height: 20px;
+            }
+
+            @media (min-width: 1024px) {
+                svg{
+                    width: 30px;
+                    height: 30px;
+                }
+            }
+        }
+
+        &--telega:hover, &--facebook:hover, &--viber:hover {
+            translate: 0 -3px;
+        }
+
+        // &--telega {
+        //     margin-left: 7px;
+
+        //     @media (min-width: 1024px) {
+        //         margin-left: 27px;
+        //     }
+        // }
+
+        &--facebook {
+            margin-left: 20px;
+
+            @media (min-width: 1024px) {
+                margin-left: 40px;
+            }
+        }
+
+        &--viber {
+            margin-left: 20px;
+
+            @media (min-width: 1024px) {
+                margin-left: 40px;
+            }
+        }
+
+    }
+}
+
+.phone__icon {
+    width: 12px;
+    height: 12px;
+    margin-right: 4px;
+}

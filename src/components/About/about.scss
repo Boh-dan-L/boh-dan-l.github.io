@@ -1,0 +1,47 @@
+
+
+.about {
+    padding: 10px 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url(../../img/about.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    &__title {
+        margin: 15px 0 30px;
+
+        @media (min-width:1024px) {
+            margin: 25px 0 30px;
+        }
+    }
+
+    &__subtitle {
+        margin-bottom: 30px;
+
+        @media (min-width:575px) {
+            max-width: 560px;
+        }
+
+        @media (min-width:1024px) {
+            max-width: 790px;
+            margin-bottom: 50px;
+        }
+
+        .subtitle {
+            @media (min-width:1024px) {
+                line-height: 40px;
+            }
+        }
+    }
+}
+
+// .title {
+//     color: white;
+// }
+
+// .subtitle {
+//     color: white;
+// }

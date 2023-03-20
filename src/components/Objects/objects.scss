@@ -1,0 +1,33 @@
+.objects {
+  text-align: center;
+  padding: 25px;
+
+  &__title {
+    margin: 40px 0 30px;
+
+    @media (min-width:1024px) {
+        margin: 100px 0 65px;
+    }
+    .title{
+      color: black;
+    }
+}
+
+}
+
+.properties {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+// ::-webkit-scrollbar {
+//   width: 5px;
+//   background-color: transparent;
+// }
+
+// ::-webkit-scrollbar-thumb {
+//   background-color: #cacaca;
+//   border-radius: 5px;
+// }

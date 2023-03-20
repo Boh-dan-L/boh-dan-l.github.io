@@ -1,0 +1,41 @@
+
+
+.partners {
+    max-width: 100%;
+    height: 164px;
+    padding: 40px;
+    background: #195F85;
+    margin-top: 100px;
+
+    .slick-slide img {
+        object-fit: cover;
+        display: flex;
+        justify-content: space-between;
+        background-repeat: no-repeat;
+    }
+
+    .slick-slide {
+        margin-left: 50px!important;
+
+        @media (min-width: 1024px) {
+            margin-left: 100px!important;
+        }
+    }
+
+    .slick-track {
+        height: 50px;
+
+        @media (min-width: 358px) {
+            height: 100px;
+        }
+    }
+
+    ul.slick-dots {
+        display: none!important;
+
+        &::before {
+            display: none;
+        }
+    }
+}
+
