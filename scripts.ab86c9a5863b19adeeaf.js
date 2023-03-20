@@ -1447,7 +1447,7 @@ var properties = [{
   imageUrl: "../img/Hidroisolation-emotsiya/IMG_1494.jpg",
   imageUrl1: "../img/Hidroisolation-emotsiya/IMG_1495.jpg",
   imageUrl2: "../img/Hidroisolation-emotsiya/IMG_1496.jpg",
-  imageUrl3: "../img/Hidroisolation-emotsiya/IMG_1497.jpg",
+  imageUrl3: "../img/Hidroisolation-emotsiya/IMG_1497.png",
   address: "Підземна гідроізоляція ЖК Емоція"
 }, {
   id: 6,
@@ -3117,4 +3117,4 @@ module.exports = __webpack_require__.p + "assets/bbcc272d5bfe3d05485c.jpeg";
 /******/ 	
 /******/ })()
 ;
-//# sourceMappingURL=scripts.f1adaa809ca192b1ae22.js.map
+//# sourceMappingURL=scripts.ab86c9a5863b19adeeaf.js.map
