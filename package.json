@@ -6,19 +6,20 @@
   "scripts": {
     "start": "NOD_ENV=development webpack serve --open",
     "dev": "NOD_ENV=development webpack",
-    "build": "NOD_ENV=production webpack"
+    "build": "NOD_ENV=production webpack",
+    "deploy": "gh-pages -d dist"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Boh-dan-L/Bogdan.rehab.git"
+    "url": "git+https://boh-dan-l.github.io/"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Boh-dan-L/Bogdan.rehab/issues"
+    "url": "https://boh-dan-l.github.io/issues"
   },
-  "homepage": "https://github.com/Boh-dan-L/Bogdan.rehab#readme",
+  "homepage": "https://boh-dan-l.github.io/",
   "devDependencies": {
     "@babel/core": "^7.19.3",
     "@babel/node": "^7.19.1",
