@@ -117,25 +117,19 @@ var About = function About() {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(framer_motion__WEBPACK_IMPORTED_MODULE_4__.motion.div, {
     variants: animate,
     initial: "hidden",
-    whileInView: "show",
-    viewport: {
-      amout: 0.1,
-      once: true
-    },
+    whileInView: "show" // viewport={{amout: 0.1, once: true,}}
+    ,
     className: "about__title"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Text_Title__WEBPACK_IMPORTED_MODULE_1__["default"], {
     about: "\u041F\u0420\u041E \u041D\u0410\u0421"
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(framer_motion__WEBPACK_IMPORTED_MODULE_4__.motion.div, {
     variants: animate,
     initial: "hidden",
-    whileInView: "show",
-    viewport: {
-      amout: 0.1,
-      once: true
-    },
+    whileInView: "show" // viewport={{amout: 0.1, once: true,}}
+    ,
     className: "about__subtitle"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Text_SubTitle__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    about: "\u041C\u0438 - \u0422\u041E\u0412 \xAB\u0411\u041A \u0421.\u0410.\u0412.\u0406.\xBB \u043F\u0440\u043E\u043F\u043E\u043D\u0443\u0454\u043C\u043E \u0441\u0432\u043E\u0456\u0308 \u043F\u043E\u0441\u043B\u0443\u0433\u0438 \u0432 \u0441\u0444\u0435\u0440\u0456 \u0432\u0438\u043A\u043E\u043D\u0430\u043D\u043D\u044F \u0433\u0456\u0434\u0440\u043E\u0456\u0437\u043E\u043B\u044F\u0446\u0456\u0438\u0306\u043D\u0438\u0445 \u0440\u043E\u0431\u0456\u0442 \u0442\u0430 \u0431\u043B\u0430\u0433\u043E\u0443\u0441\u0442\u0440\u043E\u044E \u0442\u0435\u0440\u0438\u0442\u043E\u0440\u0456\u0438\u0306. \u041C\u0430\u0454\u043C\u043E \u0447\u0443\u0434\u043E\u0432\u0438\u0438\u0306 \u0434\u043E\u0441\u0432\u0456\u0434 \u0432 \u043D\u0430\u043F\u0440\u044F\u043C\u043A\u0443 \u0434\u0430\u043D\u0438\u0445 \u0431\u0443\u0434\u0456\u0432\u0435\u043B\u044C\u043D\u043E-\u043C\u043E\u043D\u0442\u0430\u0436\u043D\u0438\u0445 \u0440\u043E\u0431\u0456\u0442 \u0442\u0430 \u0448\u0442\u0430\u0442 \u0434\u043E\u0441\u0432\u0456\u0434\u0447\u0435\u043D\u0438\u0445 \u0441\u043F\u0435\u0446\u0456\u0430\u043B\u0456\u0441\u0442\u0456\u0432. \u0417\u0430\u0431\u0435\u0437\u043F\u0435\u0447\u0438\u043C\u043E \u0432\u0438\u043A\u043E\u043D\u0430\u043D\u043D\u044F \u0432 \u043F\u043E\u0441\u0442\u0430\u0432\u043B\u0435\u043D\u0456 \u0442\u0435\u0440\u043C\u0456\u043D\u0438.\u0413\u0430\u0440\u0430\u043D\u0442\u0456\u044F \u043D\u0430 \u0432\u0438\u043A\u043E\u043D\u0430\u043D\u0456 \u0440\u043E\u0431\u043E\u0442\u0438 \u2013 10 \u0440\u043E\u043A\u0456\u0432.\u0414\u043E\u043F\u043E\u043C\u043E\u0436\u0435\u043C\u043E \u043E\u0431\u0440\u0430\u0442\u0438 \u043D\u0430\u0438\u0306\u0431\u0456\u043B\u044C\u0448 \u0435\u0444\u0435\u043A\u0442\u0438\u0432\u043D\u0435 \u0442\u0430 \u0435\u043A\u043E\u043D\u043E\u043C\u043D\u0435 \u0442\u0435\u0445\u043D\u043E\u043B\u043E\u0433\u0456\u0447\u043D\u0435 \u0440\u0456\u0448\u0435\u043D\u043D\u044F \u0434\u043B\u044F \u0443\u0441\u0443\u043D\u0435\u043D\u043D\u044F \u0437\u0430\u0442\u0456\u043A\u0430\u043D\u044C \u0432 \u0431\u0443\u0434\u0456\u0432\u043B\u0456 \u0442\u0430 \u043E\u0440\u0433\u0430\u043D\u0456\u0437\u0430\u0446\u0456\u0456\u0308 \u0431\u043B\u0430\u0433\u043E\u0443\u0441\u0442\u0440\u043E\u044E. \u0417\u0430\u0432\u0434\u044F\u043A\u0438 \u043F\u0430\u0440\u0442\u043D\u0435\u0440\u0441\u044C\u043A\u0438\u043C \u0432\u0456\u0434\u043D\u043E\u0441\u0438\u043D\u0430\u043C \u0456\u0437 \u0441\u043F\u0435\u0446\u0456\u0430\u043B\u0456\u0437\u043E\u0432\u0430\u043D\u0438\u043C\u0438 \u043F\u043E\u0441\u0442\u0430\u0447\u0430\u043B\u044C\u043D\u0438\u043A\u0430\u043C\u0438, \u0437\u0430\u0431\u0435\u0437\u043F\u0435\u0447\u0438\u043C\u043E \u043F\u043E\u0441\u0442\u0430\u0432\u043A\u0443 \u043C\u0430\u0442\u0435\u0440\u0456\u0430\u043B\u0456\u0432 \u043F\u043E \u0446\u0456\u043D\u0430\u0445 \u0456\u0437 \u0441\u0443\u0442\u0442\u0454\u0432\u043E\u044E \u0437\u043D\u0438\u0436\u043A\u043E\u044E, \u043F\u043E\u0440\u0456\u0432\u043D\u044F\u043D\u043E \u0437 \u0440\u0438\u043D\u043A\u043E\u0432\u043E\u044E."
+    about: "\u041C\u0438 - \u0422\u041E\u0412 \xAB\u0411\u041A \u0421.\u0410.\u0412.\u0406.\xBB \u043F\u0440\u043E\u043F\u043E\u043D\u0443\u0454\u043C\u043E \u0441\u0432\u043E\u0456\u0308 \u043F\u043E\u0441\u043B\u0443\u0433\u0438 \u0443 \u0441\u0444\u0435\u0440\u0456 \u0431\u0443\u0434\u0456\u0432\u043D\u0438\u0446\u0442\u0432\u0430. \u041C\u0430\u0454\u043C\u043E \u0431\u0430\u0433\u0430\u0442\u043E\u0440\u0456\u0447\u043D\u0438\u0439 \u0434\u043E\u0441\u0432\u0456\u0434 \u0432 \u043D\u0430\u043F\u0440\u044F\u043C\u043A\u0443 \u0431\u0443\u0434\u0456\u0432\u0435\u043B\u044C\u043D\u043E-\u043C\u043E\u043D\u0442\u0430\u0436\u043D\u0438\u0445 \u0440\u043E\u0431\u0456\u0442 \u0442\u0430 \u0448\u0442\u0430\u0442 \u0434\u043E\u0441\u0432\u0456\u0434\u0447\u0435\u043D\u0438\u0445 \u0441\u043F\u0435\u0446\u0456\u0430\u043B\u0456\u0441\u0442\u0456\u0432. \u0417\u0430\u0431\u0435\u0437\u043F\u0435\u0447\u0438\u043C\u043E \u0432\u0438\u043A\u043E\u043D\u0430\u043D\u043D\u044F \u0440\u043E\u0431\u0456\u0442 \u0432 \u0437\u0430\u0437\u043D\u0430\u0447\u0435\u043D\u0456 \u0442\u0435\u0440\u043C\u0456\u043D\u0438. \u0414\u0430\u0454\u043C\u043E \u0433\u0430\u0440\u0430\u043D\u0442\u0456\u044E \u043D\u0430 \u0432\u0438\u043A\u043E\u043D\u0430\u043D\u0456 \u0440\u043E\u0431\u043E\u0442\u0438. \u0414\u043E\u043F\u043E\u043C\u043E\u0436\u0435\u043C\u043E \u043E\u0431\u0440\u0430\u0442\u0438 \u043D\u0430\u0438\u0306\u0431\u0456\u043B\u044C\u0448 \u0435\u0444\u0435\u043A\u0442\u0438\u0432\u043D\u0435 \u0442\u0430 \u0435\u043A\u043E\u043D\u043E\u043C\u043D\u0435 \u043F\u0440\u043E\u0435\u043A\u0442\u043D\u0435 \u0440\u0456\u0448\u0435\u043D\u043D\u044F. \u0417\u0430\u0432\u0434\u044F\u043A\u0438 \u043F\u0430\u0440\u0442\u043D\u0435\u0440\u0441\u044C\u043A\u0438\u043C \u0432\u0456\u0434\u043D\u043E\u0441\u0438\u043D\u0430\u043C \u0456\u0437 \u043F\u043E\u0441\u0442\u0430\u0447\u0430\u043B\u044C\u043D\u0438\u043A\u0430\u043C\u0438, \u0437\u0430\u0431\u0435\u0437\u043F\u0435\u0447\u0438\u043C\u043E \u043F\u043E\u0441\u0442\u0430\u0432\u043A\u0443 \u043C\u0430\u0442\u0435\u0440\u0456\u0430\u043B\u0456\u0432 \u043F\u043E \u0446\u0456\u043D\u0430\u0445 \u0456\u0437 \u0441\u0443\u0442\u0442\u0454\u0432\u043E\u044E \u0437\u043D\u0438\u0436\u043A\u043E\u044E."
   })));
 };
 
@@ -301,13 +295,16 @@ var Footer = function Footer() {
   }, "e-mail: bksavi22@gmail.com")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "footer__icons"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", {
-    href: "#",
+    href: "https://t.me/bc_savi",
+    target: "_blank",
     className: "footer__icons--telega"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_icons_fa__WEBPACK_IMPORTED_MODULE_4__.FaTelegram, null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", {
-    href: "#",
+    href: "https://www.facebook.com/people/BC-Savi/pfbid025BM6yf5eytHQSKZ7TjtnNy9HcQA4fjYkBUjDYMBCAtyLXZHgtJpQzW4uoVWSFvG8l/",
+    target: "_blank",
     className: "footer__icons--facebook"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_icons_bs__WEBPACK_IMPORTED_MODULE_3__.BsFacebook, null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", {
-    href: "#",
+    href: "viber://chat?number=+380682448079",
+    target: "_blank",
     className: "footer__icons--viber"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_icons_fa__WEBPACK_IMPORTED_MODULE_4__.FaViber, null))));
 };
@@ -726,10 +723,6 @@ var Listing = function Listing(_ref) {
     }
   };
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(framer_motion__WEBPACK_IMPORTED_MODULE_2__.motion.div, {
-    viewport: {
-      amout: 0.1,
-      once: true
-    },
     variants: animate,
     initial: "hidden",
     whileInView: "visible",
@@ -1263,8 +1256,6 @@ var Price = function Price() {
     text4: 'Зовнішня підземна гідроізоляція будівель, включаючи:',
     cursive4: 'гідроізоляцію пальового поля',
     cursive5: 'гідроізоляцію підпірних стін',
-    text5: 'Влаштування ФЕМ та гранітної плитки по підготовці',
-    text6: 'Влаштування асфальтобетонних доріжок та площадок',
     text7: 'Монтаж водовідвідних лотків',
     text8: 'Влаштування каналізаційних люків',
     last: 'Прим. Працюємо як з рулонними так і з обмазувальними матеріалами.'
@@ -1305,6 +1296,11 @@ var Price = function Price() {
     text1: 'Влаштування монолітних колон та перекриттів',
     text2: 'Влаштування фундаментів',
     text3: 'Каркасне та безкаркасне будівництво'
+  }, {
+    id: 7,
+    title: 'Фасадні роботи',
+    text1: 'Вентильоваий фасад',
+    text2: 'Mокрий фасад'
   }];
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(framer_motion__WEBPACK_IMPORTED_MODULE_3__.motion.div, {
     id: "price",
@@ -1312,19 +1308,13 @@ var Price = function Price() {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(framer_motion__WEBPACK_IMPORTED_MODULE_3__.motion.div, {
     variants: navVariantsY,
     initial: "hidden",
-    whileInView: "show",
-    viewport: {
-      amout: 0.1,
-      once: true
-    },
+    whileInView: "show" // viewport={{amout: 0.1, once: true,}}
+    ,
     className: "price__title"
   }, "\u041F\u041E\u0421\u041B\u0423\u0413\u0418"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(framer_motion__WEBPACK_IMPORTED_MODULE_3__.motion.div, {
     variants: navVariants,
-    initial: "hidden",
-    viewport: {
-      amout: 0.1,
-      once: true
-    },
+    initial: "hidden" // viewport={{amout: 0.1, once: true,}}
+    ,
     whileInView: "show",
     className: "price__img"
   }), prices.map(function (item) {
@@ -1729,7 +1719,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".listing {\n  width: 25%;\n  min-width: 300px;\n  max-width: 400px;\n  position: relative;\n  margin: 20px;\n  cursor: pointer;\n  box-shadow: rgba(25, 95, 133, 0.4) 0px 8px 24px;\n  background-color: white;\n  border-radius: 10px;\n  overflow: hidden;\n}\n\n.listing::before {\n  content: \"\";\n  display: block;\n  padding-bottom: 125%;\n}\n\n.listing__content {\n  position: absolute;\n  left: 0;\n  top: 0;\n  width: 100%;\n  height: 100%;\n  background-color: white;\n  border-radius: 10px;\n  overflow: hidden;\n}\n\n.listing__image-container {\n  width: 100%;\n  height: 65%;\n  overflow: hidden;\n}\n\n.listing__image {\n  width: 100%;\n  height: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n\n.listing__details {\n  height: 35%;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  padding: 0px 25px;\n  position: relative;\n}\n\n.listing__type {\n  position: absolute;\n  font-size: 0.8rem;\n  right: 10px;\n  top: 10px;\n  background-color: rgb(223, 247, 255);\n  padding: 5px 10px;\n  border-radius: 15px;\n}\n\n.listing__row {\n  margin: 6px 0px;\n  display: flex;\n  align-items: center;\n}\n\n.listing__price {\n  font-size: 1.5rem;\n}\n\n.listing__address {\n  color: #737373;\n}", "",{"version":3,"sources":["webpack://./src/components/Objects/Card/Listing.scss"],"names":[],"mappings":"AAAA;EACE,UAAA;EACA,gBAAA;EACA,gBAAA;EACA,kBAAA;EACA,YAAA;EACA,eAAA;EACA,+CAAA;EACA,uBAAA;EACA,mBAAA;EACA,gBAAA;AACF;;AAEA;EACE,WAAA;EACA,cAAA;EACA,oBAAA;AACF;;AAEA;EACE,kBAAA;EACA,OAAA;EACA,MAAA;EACA,WAAA;EACA,YAAA;EACA,uBAAA;EACA,mBAAA;EACA,gBAAA;AACF;;AAEA;EACE,WAAA;EACA,WAAA;EACA,gBAAA;AACF;;AAEA;EACE,WAAA;EACA,YAAA;EACA,oBAAA;KAAA,iBAAA;AACF;;AAEA;EACE,WAAA;EACA,aAAA;EACA,sBAAA;EACA,uBAAA;EACA,mBAAA;EACA,iBAAA;EACA,kBAAA;AACF;;AAEA;EACE,kBAAA;EACA,iBAAA;EACA,WAAA;EACA,SAAA;EACA,oCAAA;EACA,iBAAA;EACA,mBAAA;AACF;;AAEA;EACE,eAAA;EACA,aAAA;EACA,mBAAA;AACF;;AAEA;EACE,iBAAA;AACF;;AAEA;EACE,cAAA;AACF","sourcesContent":[".listing {\n  width: 25%;\n  min-width: 300px;\n  max-width: 400px;\n  position: relative;\n  margin: 20px;\n  cursor: pointer;\n  box-shadow: rgba(25, 95, 133, 0.4) 0px 8px 24px;\n  background-color: white;\n  border-radius: 10px;\n  overflow: hidden;\n}\n\n.listing::before {\n  content: \"\";\n  display: block;\n  padding-bottom: calc((5 / 4) * 100%);\n}\n\n.listing__content {\n  position: absolute;\n  left: 0;\n  top: 0;\n  width: 100%;\n  height: 100%;\n  background-color: white;\n  border-radius: 10px;\n  overflow: hidden;\n}\n\n.listing__image-container {\n  width: 100%;\n  height: 65%;\n  overflow: hidden;\n}\n\n.listing__image {\n  width: 100%;\n  height: 100%;\n  object-fit: cover;\n}\n\n.listing__details {\n  height: 35%;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  padding: 0px 25px;\n  position: relative;\n}\n\n.listing__type {\n  position: absolute;\n  font-size: 0.8rem;\n  right: 10px;\n  top: 10px;\n  background-color: rgb(223, 247, 255);\n  padding: 5px 10px;\n  border-radius: 15px;\n}\n\n.listing__row {\n  margin: 6px 0px;\n  display: flex;\n  align-items: center;\n}\n\n.listing__price {\n  font-size: 1.5rem;\n}\n\n.listing__address {\n  color: #737373;\n}\n"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, ".listing {\n  width: 25%;\n  min-width: 300px;\n  max-width: 400px;\n  position: relative;\n  margin: 20px;\n  cursor: pointer;\n  box-shadow: rgba(25, 95, 133, 0.4) 0px 8px 24px;\n  background-color: white;\n  border-radius: 10px;\n  overflow: hidden;\n}\n\n.listing::before {\n  content: \"\";\n  display: block;\n  padding-bottom: 125%;\n}\n\n.listing__content {\n  position: absolute;\n  left: 0;\n  top: 0;\n  width: 100%;\n  height: 100%;\n  background-color: white;\n  border-radius: 10px;\n  overflow: hidden;\n}\n\n.listing__image-container {\n  width: 100%;\n  height: 65%;\n  overflow: hidden;\n}\n\n.listing__image {\n  width: 100%;\n  height: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n\n.listing__details {\n  height: 35%;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  padding: 0px 25px;\n  position: relative;\n}\n\n.listing__type {\n  position: absolute;\n  font-size: 0.8rem;\n  right: 10px;\n  top: 10px;\n  background-color: rgb(223, 247, 255);\n  padding: 5px 10px;\n  border-radius: 15px;\n}\n\n.listing__row {\n  margin: 6px 0px;\n  display: flex;\n  align-items: center;\n}\n\n.listing__price {\n  font-family: \"Barlow\", sans-serif;\n  font-style: bold;\n  font-weight: 500;\n  font-size: 1.5rem;\n}\n\n.listing__address {\n  color: #737373;\n}", "",{"version":3,"sources":["webpack://./src/components/Objects/Card/Listing.scss"],"names":[],"mappings":"AAAA;EACE,UAAA;EACA,gBAAA;EACA,gBAAA;EACA,kBAAA;EACA,YAAA;EACA,eAAA;EACA,+CAAA;EACA,uBAAA;EACA,mBAAA;EACA,gBAAA;AACF;;AAEA;EACE,WAAA;EACA,cAAA;EACA,oBAAA;AACF;;AAEA;EACE,kBAAA;EACA,OAAA;EACA,MAAA;EACA,WAAA;EACA,YAAA;EACA,uBAAA;EACA,mBAAA;EACA,gBAAA;AACF;;AAEA;EACE,WAAA;EACA,WAAA;EACA,gBAAA;AACF;;AAEA;EACE,WAAA;EACA,YAAA;EACA,oBAAA;KAAA,iBAAA;AACF;;AAEA;EACE,WAAA;EACA,aAAA;EACA,sBAAA;EACA,uBAAA;EACA,mBAAA;EACA,iBAAA;EACA,kBAAA;AACF;;AAEA;EACE,kBAAA;EACA,iBAAA;EACA,WAAA;EACA,SAAA;EACA,oCAAA;EACA,iBAAA;EACA,mBAAA;AACF;;AAEA;EACE,eAAA;EACA,aAAA;EACA,mBAAA;AACF;;AAEA;EACE,iCAAA;EACA,gBAAA;EACA,gBAAA;EACA,iBAAA;AACF;;AAEA;EACE,cAAA;AACF","sourcesContent":[".listing {\n  width: 25%;\n  min-width: 300px;\n  max-width: 400px;\n  position: relative;\n  margin: 20px;\n  cursor: pointer;\n  box-shadow: rgba(25, 95, 133, 0.4) 0px 8px 24px;\n  background-color: white;\n  border-radius: 10px;\n  overflow: hidden;\n}\n\n.listing::before {\n  content: \"\";\n  display: block;\n  padding-bottom: calc((5 / 4) * 100%);\n}\n\n.listing__content {\n  position: absolute;\n  left: 0;\n  top: 0;\n  width: 100%;\n  height: 100%;\n  background-color: white;\n  border-radius: 10px;\n  overflow: hidden;\n}\n\n.listing__image-container {\n  width: 100%;\n  height: 65%;\n  overflow: hidden;\n}\n\n.listing__image {\n  width: 100%;\n  height: 100%;\n  object-fit: cover;\n}\n\n.listing__details {\n  height: 35%;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  padding: 0px 25px;\n  position: relative;\n}\n\n.listing__type {\n  position: absolute;\n  font-size: 0.8rem;\n  right: 10px;\n  top: 10px;\n  background-color: rgb(223, 247, 255);\n  padding: 5px 10px;\n  border-radius: 15px;\n}\n\n.listing__row {\n  margin: 6px 0px;\n  display: flex;\n  align-items: center;\n}\n\n.listing__price {\n  font-family:'Barlow', sans-serif;\n  font-style: bold;\n  font-weight: 500;\n  font-size: 1.5rem;\n}\n\n.listing__address {\n  color: #737373;\n}\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -3117,4 +3107,4 @@ module.exports = __webpack_require__.p + "assets/bbcc272d5bfe3d05485c.jpeg";
 /******/ 	
 /******/ })()
 ;
-//# sourceMappingURL=scripts.ab86c9a5863b19adeeaf.js.map
+//# sourceMappingURL=scripts.c1407feabb5b5f130e89.js.map
