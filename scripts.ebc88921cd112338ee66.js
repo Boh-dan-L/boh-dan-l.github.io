@@ -152,29 +152,30 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_icons_bi__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-icons/bi */ "./node_modules/react-icons/bi/index.esm.js");
 /* harmony import */ var _accordionCopy_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./accordionCopy.scss */ "./src/components/Accordion/accordionCopy.scss");
 /* harmony import */ var framer_motion__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! framer-motion */ "./node_modules/framer-motion/dist/es/render/dom/motion.mjs");
-function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
-
-function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
-
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
-
-function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
-
-function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
-
-function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
 
 
-
-var Accordion = function Accordion(props) {
-  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
-      _useState2 = _slicedToArray(_useState, 2),
-      active = _useState2[0],
-      setActive = _useState2[1];
-
+var Accordion = function Accordion(_ref) {
+  var index = _ref.index,
+      title = _ref.title,
+      activeIndex = _ref.activeIndex,
+      setActiveIndex = _ref.setActiveIndex,
+      text1 = _ref.text1,
+      text2 = _ref.text2,
+      text3 = _ref.text3,
+      text4 = _ref.text4,
+      text5 = _ref.text5,
+      text6 = _ref.text6,
+      text7 = _ref.text7,
+      text8 = _ref.text8,
+      cursive1 = _ref.cursive1,
+      cursive2 = _ref.cursive2,
+      cursive3 = _ref.cursive3,
+      cursive4 = _ref.cursive4,
+      cursive5 = _ref.cursive5,
+      last = _ref.last;
   var navVariants = {
     hidden: {
       opacity: 0,
@@ -195,52 +196,56 @@ var Accordion = function Accordion(props) {
       }
     }
   };
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(framer_motion__WEBPACK_IMPORTED_MODULE_2__.motion.div, {
+
+  var handleAccordionClick = function handleAccordionClick() {
+    // Відкриває або закриває елемент в залежності від того, чи це той самий елемент
+    setActiveIndex(activeIndex === index ? null : index);
+  };
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(framer_motion__WEBPACK_IMPORTED_MODULE_2__.motion.div, {
+    key: index,
     variants: navVariants,
     initial: "hidden",
-    whileInView: "show" // viewport={{amout: 0.1, once: true,}}
-    ,
-    className: "accordion ".concat(active ? 'active' : '')
+    whileInView: "show",
+    className: "accordion ".concat(activeIndex === index ? 'active' : '')
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "accordion__btn",
-    onClick: function onClick() {
-      return setActive(!active);
-    }
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null, props.title, " "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    onClick: handleAccordionClick
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null, title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "accordion__icon"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_icons_bi__WEBPACK_IMPORTED_MODULE_3__.BiChevronDown, {
     className: "bx bxs-chevron-down"
-  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("ul", {
+  }))), activeIndex === index && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("ul", {
     className: "accordion__content"
-  }, props.text1 && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", {
+  }, text1 && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", {
     className: "accordion__content--li"
-  }, props.text1), props.cursive1 && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", {
+  }, text1), cursive1 && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", {
     className: "accordion__content--cursive"
-  }, props.cursive1), props.cursive2 && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", {
+  }, cursive1), cursive2 && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", {
     className: "accordion__content--cursive"
-  }, props.cursive2), props.cursive3 && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", {
+  }, cursive2), cursive3 && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", {
     className: "accordion__content--cursive"
-  }, props.cursive3), props.text2 && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", {
+  }, cursive3), text2 && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", {
     className: "accordion__content--li"
-  }, props.text2), props.text3 && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", {
+  }, text2), text3 && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", {
     className: "accordion__content--li"
-  }, props.text3), props.text4 && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", {
+  }, text3), text4 && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", {
     className: "accordion__content--li"
-  }, props.text4), props.cursive4 && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", {
+  }, text4), cursive4 && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", {
     className: "accordion__content--cursive"
-  }, props.cursive4), props.cursive5 && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", {
+  }, cursive4), cursive5 && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", {
     className: "accordion__content--cursive"
-  }, props.cursive5), props.text5 && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", {
+  }, cursive5), text5 && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", {
     className: "accordion__content--li"
-  }, props.text5), props.text6 && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", {
+  }, text5), text6 && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", {
     className: "accordion__content--li"
-  }, props.text6), props.text7 && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", {
+  }, text6), text7 && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", {
     className: "accordion__content--li"
-  }, props.text7), props.text8 && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", {
+  }, text7), text8 && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", {
     className: "accordion__content--li"
-  }, props.text8), props.last && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", {
+  }, text8), last && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", {
     className: "accordion__content--last"
-  }, props.last))));
+  }, last)));
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Accordion);
@@ -339,7 +344,7 @@ __webpack_require__.r(__webpack_exports__);
 var Header = function Header() {
   var navVariantsY = {
     hidden: {
-      opacity: 0,
+      opacity: 1,
       y: 100,
       transition: {
         type: 'spring',
@@ -361,15 +366,15 @@ var Header = function Header() {
   var _useViewportScroll = (0,framer_motion__WEBPACK_IMPORTED_MODULE_3__.useViewportScroll)(),
       scrollYProgress = _useViewportScroll.scrollYProgress;
 
-  var scale = (0,framer_motion__WEBPACK_IMPORTED_MODULE_4__.useTransform)(scrollYProgress, [1, 0], [0, 1]);
+  var scale = (0,framer_motion__WEBPACK_IMPORTED_MODULE_4__.useTransform)(scrollYProgress, [0, 0], [0, 0]);
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     id: "home",
     className: "header"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_parallax__WEBPACK_IMPORTED_MODULE_1__.Parallax, {
-    bgImage: "../../img/header-mob1.jpg",
+    bgImage: "../../img/header-mob1.png",
     bgClassName: "parallax",
     bgImageAlt: "the cat",
-    strength: 100
+    strength: 50
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(framer_motion__WEBPACK_IMPORTED_MODULE_5__.motion.div, {
     variants: navVariantsY,
     initial: "hidden",
@@ -415,7 +420,7 @@ var Menu = function Menu(_ref) {
       active = _ref.active,
       setActive = _ref.setActive,
       scrollY = _ref.scrollY;
-  var yInput = [660, 700];
+  var yInput = [500, 610];
   var background = (0,framer_motion__WEBPACK_IMPORTED_MODULE_3__.useTransform)(scrollY, yInput, ["transparent", "#195F85"]);
   var boxShadow = (0,framer_motion__WEBPACK_IMPORTED_MODULE_3__.useTransform)(scrollY, yInput, ['none', '0px 4px 4px rgba(0, 0, 0, 0.25)']);
 
@@ -534,7 +539,7 @@ function Navbar() {
   var _useScroll = (0,framer_motion__WEBPACK_IMPORTED_MODULE_4__.useScroll)(0),
       scrollY = _useScroll.scrollY;
 
-  var y = [600, 660];
+  var y = [450, 570];
   var background = (0,framer_motion__WEBPACK_IMPORTED_MODULE_5__.useTransform)(scrollY, y, ["transparent", "#195F85"]);
 
   var _useScroll2 = (0,framer_motion__WEBPACK_IMPORTED_MODULE_4__.useScroll)(0),
@@ -647,43 +652,6 @@ var MCard = (0,framer_motion__WEBPACK_IMPORTED_MODULE_5__.motion)(Card);
 
 /***/ }),
 
-/***/ "./src/components/Objects/Card/Feature.js":
-/*!************************************************!*\
-  !*** ./src/components/Objects/Card/Feature.js ***!
-  \************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_icons_fa__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-icons/fa */ "./node_modules/react-icons/fa/index.esm.js");
-/* harmony import */ var _Feature_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Feature.scss */ "./src/components/Objects/Card/Feature.scss");
-
-
-
-
-var Feature = function Feature(_ref) {
-  var iconName = _ref.iconName,
-      iconLabel = _ref.iconLabel;
-  var Icon = react_icons_fa__WEBPACK_IMPORTED_MODULE_2__[iconName];
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-    className: "feature"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-    className: "feature__circle"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(Icon, {
-    className: "feature__icon"
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
-    className: "feature__label"
-  }, iconLabel));
-};
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Feature);
-
-/***/ }),
-
 /***/ "./src/components/Objects/Card/Listing.js":
 /*!************************************************!*\
   !*** ./src/components/Objects/Card/Listing.js ***!
@@ -765,12 +733,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _Modal_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Modal.scss */ "./src/components/Objects/Card/Modal.scss");
-/* harmony import */ var _Feature__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Feature */ "./src/components/Objects/Card/Feature.js");
-/* harmony import */ var react_slick__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-slick */ "./node_modules/react-slick/lib/index.js");
-/* harmony import */ var slick_carousel_slick_slick_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! slick-carousel/slick/slick.css */ "./node_modules/slick-carousel/slick/slick.css");
-/* harmony import */ var slick_carousel_slick_slick_theme_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! slick-carousel/slick/slick-theme.css */ "./node_modules/slick-carousel/slick/slick-theme.css");
-/* harmony import */ var react_icons_io5__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react-icons/io5 */ "./node_modules/react-icons/io5/index.esm.js");
-/* harmony import */ var framer_motion__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! framer-motion */ "./node_modules/framer-motion/dist/es/render/dom/motion.mjs");
+/* harmony import */ var react_slick__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-slick */ "./node_modules/react-slick/lib/index.js");
+/* harmony import */ var slick_carousel_slick_slick_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! slick-carousel/slick/slick.css */ "./node_modules/slick-carousel/slick/slick.css");
+/* harmony import */ var slick_carousel_slick_slick_theme_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! slick-carousel/slick/slick-theme.css */ "./node_modules/slick-carousel/slick/slick-theme.css");
+/* harmony import */ var react_icons_io5__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-icons/io5 */ "./node_modules/react-icons/io5/index.esm.js");
+/* harmony import */ var framer_motion__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! framer-motion */ "./node_modules/framer-motion/dist/es/render/dom/motion.mjs");
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
@@ -783,11 +761,15 @@ __webpack_require__.r(__webpack_exports__);
 var Modal = function Modal(_ref) {
   var data = _ref.data,
       close = _ref.close;
-  var imageUrl = data.imageUrl,
-      imageUrl1 = data.imageUrl1,
-      imageUrl2 = data.imageUrl2,
-      imageUrl3 = data.imageUrl3,
+  var images = data.images,
       address = data.address;
+
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(0),
+      _useState2 = _slicedToArray(_useState, 2),
+      currentSlideIndex = _useState2[0],
+      setCurrentSlideIndex = _useState2[1]; // Стан для поточного зображення
+
+
   var modalVariants = {
     open: {
       opacity: 1,
@@ -836,41 +818,50 @@ var Modal = function Modal(_ref) {
     infinite: true,
     speed: 500,
     slidesToShow: 1,
-    slidesToScroll: 1
+    slidesToScroll: 1,
+    afterChange: function afterChange(index) {
+      return setCurrentSlideIndex(index);
+    } // Оновлюємо індекс поточного слайду
+
   };
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(framer_motion__WEBPACK_IMPORTED_MODULE_6__.motion.div, {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(framer_motion__WEBPACK_IMPORTED_MODULE_5__.motion.div, {
     className: "modal",
     variants: modalVariants,
     onClick: function onClick(e) {
       return e.stopPropagation();
     }
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(framer_motion__WEBPACK_IMPORTED_MODULE_6__.motion.div, {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(framer_motion__WEBPACK_IMPORTED_MODULE_5__.motion.div, {
     className: "modal__image",
-    alt: "real estate mansion",
     variants: imageVariants
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_slick__WEBPACK_IMPORTED_MODULE_3__["default"], settings, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", {
-    src: imageUrl
-  }), imageUrl1 && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", {
-    src: imageUrl1
-  }), imageUrl2 && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", {
-    src: imageUrl2
-  }), imageUrl3 && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", {
-    src: imageUrl3
-  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(framer_motion__WEBPACK_IMPORTED_MODULE_6__.motion.div, {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_slick__WEBPACK_IMPORTED_MODULE_2__["default"], settings, images.map(function (image, index) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      key: index,
+      className: "modal__slide"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", {
+      src: image.url,
+      alt: "\u0417\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u043D\u044F ".concat(index + 1),
+      className: "modal__slide-image"
+    }));
+  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(framer_motion__WEBPACK_IMPORTED_MODULE_5__.motion.div, {
     className: "modal__info",
     variants: modalInfoVariants
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(framer_motion__WEBPACK_IMPORTED_MODULE_6__.motion.div, {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(framer_motion__WEBPACK_IMPORTED_MODULE_5__.motion.div, {
     className: "modal__row",
     variants: modalRowVariants
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
     className: "modal__price"
-  }, address)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(framer_motion__WEBPACK_IMPORTED_MODULE_6__.motion.button, {
+  }, address)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(framer_motion__WEBPACK_IMPORTED_MODULE_5__.motion.div, {
+    className: "modal__row",
+    variants: modalRowVariants
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", {
+    className: "modal__description"
+  }, images[currentSlideIndex].description, " ")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(framer_motion__WEBPACK_IMPORTED_MODULE_5__.motion.button, {
     className: "modal__close-wrapper",
     whileHover: {
       scale: 1.2
     },
     onClick: close
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_icons_io5__WEBPACK_IMPORTED_MODULE_7__.IoCloseCircleOutline, {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_icons_io5__WEBPACK_IMPORTED_MODULE_6__.IoCloseCircleOutline, {
     className: "modal__close-icon"
   }))));
 };
@@ -1196,17 +1187,34 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Accordion_Accordion__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Accordion/Accordion */ "./src/components/Accordion/Accordion.js");
 /* harmony import */ var framer_motion__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! framer-motion */ "./node_modules/framer-motion/dist/es/render/dom/motion.mjs");
 /* harmony import */ var _price_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./price.scss */ "./src/components/Price/price.scss");
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
 
 
 
 
 
 var Price = function Price() {
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(0),
+      _useState2 = _slicedToArray(_useState, 2),
+      activeIndex = _useState2[0],
+      setActiveIndex = _useState2[1]; // Стан для відслідковування активного акордеону
+
+
   var navVariants = {
     hidden: {
       scale: 0.5,
       opacity: 0,
-      // y: -10,
       transition: {
         type: 'scale',
         stiffness: 300,
@@ -1216,7 +1224,6 @@ var Price = function Price() {
     show: {
       scale: 1,
       opacity: 1,
-      // y: 0,
       transition: {
         duration: 0.8,
         delay: 0.5,
@@ -1238,7 +1245,6 @@ var Price = function Price() {
       opacity: 1,
       y: 0,
       transition: {
-        // type: 'spring',
         stiffness: 80,
         delay: 0.1
       }
@@ -1277,30 +1283,6 @@ var Price = function Price() {
     text6: 'Влаштування асфальтобетонних доріжок та площадок',
     text7: 'Монтаж водовідвідних лотків',
     text8: 'Влаштування каналізаційних люків'
-  }, {
-    id: 4,
-    title: 'Покрівлі',
-    text1: 'Скатні покрівлі',
-    text2: 'Плоскі покрівлі'
-  }, {
-    id: 5,
-    title: 'Опоряджувальні роботи',
-    text1: 'Малярні роботи',
-    text2: 'Штукатурні роботи',
-    text3: 'Влаштування плитки',
-    text4: 'Влаштування стяжки',
-    text6: 'Сантехнічні роботи'
-  }, {
-    id: 6,
-    title: 'Монолітні роботи',
-    text1: 'Влаштування монолітних колон та перекриттів',
-    text2: 'Влаштування фундаментів',
-    text3: 'Каркасне та безкаркасне будівництво'
-  }, {
-    id: 7,
-    title: 'Фасадні роботи',
-    text1: 'Вентильоваий фасад',
-    text2: 'Mокрий фасад'
   }];
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(framer_motion__WEBPACK_IMPORTED_MODULE_3__.motion.div, {
     id: "price",
@@ -1308,19 +1290,21 @@ var Price = function Price() {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(framer_motion__WEBPACK_IMPORTED_MODULE_3__.motion.div, {
     variants: navVariantsY,
     initial: "hidden",
-    whileInView: "show" // viewport={{amout: 0.1, once: true,}}
-    ,
+    whileInView: "show",
     className: "price__title"
   }, "\u041F\u041E\u0421\u041B\u0423\u0413\u0418"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(framer_motion__WEBPACK_IMPORTED_MODULE_3__.motion.div, {
     variants: navVariants,
-    initial: "hidden" // viewport={{amout: 0.1, once: true,}}
-    ,
+    initial: "hidden",
     whileInView: "show",
     className: "price__img"
-  }), prices.map(function (item) {
+  }), prices.map(function (item, index) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Accordion_Accordion__WEBPACK_IMPORTED_MODULE_1__["default"], {
       key: item.id,
+      index: index // Передаємо індекс
+      ,
       title: item.title,
+      activeIndex: activeIndex,
+      setActiveIndex: setActiveIndex,
       text1: item.text1,
       text2: item.text2,
       text3: item.text3,
@@ -1411,57 +1395,159 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 var properties = [{
   id: 1,
-  imageUrl: "../img/9-elements/IMG_0772.jpg",
-  imageUrl1: "../img/9-elements/IMG_0774.jpg",
-  address: "КМ «9 елементів»",
-  description: ""
+  imageUrl: "../img/Pokrivlya/KyivObl.jpg",
+  address: "ПОКРІВЛЯ",
+  images: [{
+    url: "../img/Pokrivlya/9-elements/IMG_0772.jpg",
+    description: "КМ «9 елементів»"
+  }, {
+    url: "../img/Pokrivlya/9-elements/IMG_0774.jpg",
+    description: "КМ «9 елементів»"
+  }, {
+    url: "../img/Pokrivlya/Kruhlouniversitetska-street/IMG_1327.jpg",
+    description: "вул. Круглоуніверситетська"
+  }, {
+    url: "../img/Pokrivlya/Kruhlouniversitetska-street/IMG_1328.jpg",
+    description: "вул. Круглоуніверситетська"
+  }, {
+    url: "../img/Pokrivlya/Pluti/IMG_0767.jpg",
+    description: "Плюти"
+  }, {
+    url: "../img/Pokrivlya/Pluti/IMG_0769.jpg",
+    description: "Плюти"
+  }, {
+    url: "../img/Pokrivlya/Pluti/IMG_0785.jpg",
+    description: "Плюти"
+  }, {
+    url: "../img/Pokrivlya/Puscha-vodistya/IMG_1317.jpg",
+    description: "Пуща водиця"
+  }, {
+    url: "../img/Pokrivlya/Yakutska-street/IMG_1502.jpg",
+    description: "вул. Якутська"
+  }, {
+    url: "../img/Pokrivlya/Filatova.jpg",
+    description: "вул. Філатова"
+  }, {
+    url: "../img/Pokrivlya/Filatova1.jpg",
+    description: "вул. Філатова"
+  }, {
+    url: "../img/Pokrivlya/Filatova2.jpg",
+    description: "вул. Філатова"
+  }, {
+    url: "../img/Pokrivlya/KyivObl.jpg",
+    description: "Київська обл."
+  }, {
+    url: "../img/Pokrivlya/KyivObl1.jpg",
+    description: "Київська обл."
+  }, {
+    url: "../img/Pokrivlya/Matrusivka.jpg",
+    description: "с. Матрусівка"
+  }, {
+    url: "../img/Pokrivlya/Matrusivka1.jpg",
+    description: "с. Матрусівка"
+  }, {
+    url: "../img/Pokrivlya/Matrusivka2.jpg",
+    description: "с. Матрусівка"
+  }, {
+    url: "../img/Pokrivlya/MVSsenter.jpg",
+    description: "центр МВС"
+  }, {
+    url: "../img/Pokrivlya/MVSsenter1.jpg",
+    description: "центр МВС"
+  }]
 }, {
   id: 2,
-  imageUrl: "../img/Kojumiatska-street/IMG_1504.jpg",
-  imageUrl1: "../img/Kojumiatska-street/504.jpg",
-  address: "Виконання благоустрою по вул. Кожумʼяцька",
-  description: ""
+  imageUrl: "../img/Blahoustriy/City/IMG_1500.jpg",
+  address: "БЛАГОУСТРІЙ",
+  images: [{
+    url: "../img/Blahoustriy/City/IMG_1500.jpg",
+    description: "Місто"
+  }, {
+    url: "../img/Blahoustriy/City/IMG_1505.jpg",
+    description: "Місто"
+  }, {
+    url: "../img/Blahoustriy/Emotsiya/IMG_0753.jpg",
+    description: "ЖК Емоція"
+  }, {
+    url: "../img/Blahoustriy/Emotsiya/IMG_0754.jpg",
+    description: "ЖК Емоція"
+  }, {
+    url: "../img/Blahoustriy/Emotsiya/IMG_0756.jpg",
+    description: "ЖК Емоція"
+  }, {
+    url: "../img/Blahoustriy/Kojumiatska-street/504.jpg",
+    description: "вул. Кожумʼяцька"
+  }, {
+    url: "../img/Blahoustriy/Kojumiatska-street/IMG_1504.jpg",
+    description: "вул. Кожумʼяцька"
+  }, {
+    url: "../img/Blahoustriy/Pohila-street/IMG_1324.jpg",
+    description: "вул. Похила"
+  }, {
+    url: "../img/Blahoustriy/hotiv.jpg",
+    description: "с. Хотів"
+  }, {
+    url: "../img/Blahoustriy/hotiv1.jpg",
+    description: "с. Хотів"
+  }, {
+    url: "../img/Blahoustriy/Kalinyvka.jpg",
+    description: "вул. Калинівська"
+  }, {
+    url: "../img/Blahoustriy/roshen.jpg",
+    description: "Рошен м. Бориспіль"
+  }, {
+    url: "../img/Blahoustriy/roshen1.jpg",
+    description: "Рошен м. Бориспіль"
+  }, {
+    url: "../img/Blahoustriy/roshen2.jpg",
+    description: "Рошен м. Бориспіль"
+  }, {
+    url: "../img/Blahoustriy/roshen3.jpg",
+    description: "Рошен м. Бориспіль"
+  }, {
+    url: "../img/Blahoustriy/sahaydak.jpg",
+    description: "вул. Сагайдак"
+  }, {
+    url: "../img/Blahoustriy/sahaydak1.jpg",
+    description: "вул. Сагайдак"
+  }, {
+    url: "../img/Blahoustriy/Yunit.jpg",
+    description: "ЖК Юніт"
+  }, {
+    url: "../img/Blahoustriy/Yunit1.jpg",
+    description: "ЖК Юніт"
+  }]
 }, {
   id: 3,
-  imageUrl: "../img/City/IMG_1500.jpg",
-  imageUrl1: "../img/City/IMG_1505.jpg",
-  address: "Благоустрій місто"
+  imageUrl: "../img/hidroisolyatsiya/Hidroisolation-emotsiya/IMG_1497.jpg",
+  address: "ГІДРОІЗОЛЯЦІЯ",
+  images: [{
+    url: "../img/hidroisolyatsiya/Hidroisolation-emotsiya/IMG_1497.jpg",
+    description: "ЖК Емоція"
+  }, {
+    url: "../img/hidroisolyatsiya/Hidroisolation-emotsiya/IMG_1496.jpg",
+    description: "ЖК Емоція"
+  }, {
+    url: "../img/hidroisolyatsiya/Hidroisolation-emotsiya/IMG_1495.jpg",
+    description: "ЖК Емоція"
+  }, {
+    url: "../img/hidroisolyatsiya/Hidroisolation-emotsiya/IMG_1494.jpg",
+    description: "ЖК Емоція"
+  }, {
+    url: "../img/hidroisolyatsiya/Hostomel.jpg",
+    description: "стадіон Гостомель"
+  }]
 }, {
   id: 4,
-  imageUrl: "../img/Emotsiya/IMG_0753.jpg",
-  imageUrl1: "../img/Emotsiya/IMG_0754.jpg",
-  imageUrl2: "../img/Emotsiya/IMG_0756.jpg",
-  address: "ЖК Емоція"
-}, {
-  id: 5,
-  imageUrl: "../img/Hidroisolation-emotsiya/IMG_1494.jpg",
-  imageUrl1: "../img/Hidroisolation-emotsiya/IMG_1495.jpg",
-  imageUrl2: "../img/Hidroisolation-emotsiya/IMG_1496.jpg",
-  imageUrl3: "../img/Hidroisolation-emotsiya/IMG_1497.png",
-  address: "Підземна гідроізоляція ЖК Емоція"
-}, {
-  id: 6,
-  imageUrl: "../img/Kruhlouniversitetska-street/IMG_1327.jpg",
-  imageUrl1: "../img/Kruhlouniversitetska-street/IMG_1328.JPG",
-  address: "Об'єкт вул. Круглоуніверситетська "
-}, {
-  id: 7,
-  imageUrl: "../img/Pluti/IMG_0767.jpg",
-  imageUrl1: "../img/Pluti/IMG_0769.jpg",
-  imageUrl2: "../img/Pluti/IMG_0785.JPG",
-  address: "Об'єкт Плюти"
-}, {
-  id: 8,
-  imageUrl: "../img/Pohila-street/IMG_1324.jpg",
-  address: "Відновлення благоустрою на вулиці Похила"
-}, {
-  id: 9,
-  imageUrl: "../img/Puscha-vodistya/IMG_1317.jpg",
-  address: "Пуща водиця"
-}, {
-  id: 10,
-  imageUrl: "../img/Yakutska-street/IMG_1502.JPG",
-  address: "Вул. Якутська "
+  imageUrl: "../img/Zahaliny/Horizont.jpg",
+  address: "ЗАГАЛЬНОБУДІВЕЛЬНІ РОБОТИ",
+  images: [{
+    url: "../img/Zahaliny/Horizont.jpg",
+    description: "БЦ Горизонт парк"
+  }, {
+    url: "../img/Zahaliny/Horizont1.jpg",
+    description: "БЦ Горизонт парк"
+  }]
 }];
 
 /***/ }),
@@ -1600,17 +1686,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 /* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/getUrl.js */ "./node_modules/css-loader/dist/runtime/getUrl.js");
-/* harmony import */ var _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2__);
 // Imports
 
 
-
-var ___CSS_LOADER_URL_IMPORT_0___ = new URL(/* asset import */ __webpack_require__(/*! ../../img/logo.svg */ "./src/img/logo.svg"), __webpack_require__.b);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
-var ___CSS_LOADER_URL_REPLACEMENT_0___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_0___);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".header {\n  z-index: 3;\n}\n.header__img {\n  position: relative;\n  width: 100vw;\n  height: 30vh;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n@media (min-width: 575px) {\n  .header__img {\n    height: 50vh;\n  }\n}\n@media (min-width: 1024px) {\n  .header__img {\n    height: 100vh;\n  }\n}\n.header__img--logo {\n  position: absolute;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  overflow: hidden;\n  width: 175px;\n  height: 65px;\n  background-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\n  background-position: 50% 50%;\n  background-repeat: no-repeat;\n  background-size: contain;\n}\n@media (min-width: 575px) {\n  .header__img--logo {\n    width: 300px;\n    height: 100px;\n    background-size: cover;\n  }\n}\n@media (min-width: 1024px) {\n  .header__img--logo {\n    width: 600px;\n    height: 200px;\n    background-size: cover;\n  }\n}\n\n.custom-bg {\n  position: relative;\n  width: 100vw;\n  height: 30vh;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n@media (min-width: 575px) {\n  .custom-bg {\n    height: 50vh;\n  }\n}\n@media (min-width: 1024px) {\n  .custom-bg {\n    height: 100vh;\n  }\n}", "",{"version":3,"sources":["webpack://./src/components/Header/header.scss"],"names":[],"mappings":"AAEA;EACI,UAAA;AADJ;AAGI;EACI,kBAAA;EACA,YAAA;EACA,YAAA;EACA,aAAA;EACA,uBAAA;EACA,mBAAA;AADR;AAIQ;EATJ;IAUQ,YAAA;EADV;AACF;AAGQ;EAbJ;IAcQ,aAAA;EAAV;AACF;AAEQ;EACI,kBAAA;EACA,aAAA;EACA,uBAAA;EACA,mBAAA;EACA,gBAAA;EACA,YAAA;EACA,YAAA;EACA,yDAAA;EACA,4BAAA;EACA,4BAAA;EACA,wBAAA;AAAZ;AAEY;EAbJ;IAcQ,YAAA;IACA,aAAA;IACA,sBAAA;EACd;AACF;AACY;EAnBJ;IAoBQ,YAAA;IACA,aAAA;IACA,sBAAA;EAEd;AACF;;AAqBA;EACI,kBAAA;EACA,YAAA;EACA,YAAA;EACA,aAAA;EACA,uBAAA;EACA,mBAAA;AAlBJ;AAqBI;EATJ;IAUQ,YAAA;EAlBN;AACF;AAoBI;EAbJ;IAcQ,aAAA;EAjBN;AACF","sourcesContent":["\n\n.header {\n    z-index: 3;\n\n    &__img {\n        position: relative;\n        width: 100vw;\n        height: 30vh;\n        display: flex;\n        justify-content: center;\n        align-items: center;\n\n\n        @media (min-width: 575px) {\n            height: 50vh;\n        }\n\n        @media (min-width: 1024px) {\n            height: 100vh;\n        }\n\n        &--logo {\n            position: absolute;\n            display: flex;\n            justify-content: center;\n            align-items: center;\n            overflow: hidden;\n            width: 175px;\n            height: 65px;\n            background-image: url(../../img/logo.svg);\n            background-position: 50% 50%;\n            background-repeat: no-repeat;\n            background-size: contain;\n\n            @media (min-width: 575px) {\n                width: 300px;\n                height: 100px;\n                background-size: cover;\n            }\n\n            @media (min-width: 1024px) {\n                width: 600px;\n                height: 200px;\n                background-size: cover;\n            }\n        }\n    }\n\n    // &__bg {\n    //     // position: absolute;\n    //     width: 100%;\n    //     height: 30%;\n    //     background-image: url(../../img/header-bott.png);\n    //     background-repeat: no-repeat;\n    //     background-position: 50% 50%;\n    //     // background-size: contain;\n\n    //     @media (min-width: 575px) {\n    //         height: 50%;\n    //     }\n\n    //     @media (min-width: 1024px) {\n    //         height: 600px;\n    //     }\n    // }\n}\n\n.custom-bg {\n    position: relative;\n    width: 100vw;\n    height: 30vh;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n\n\n    @media (min-width: 575px) {\n        height: 50vh;\n    }\n\n    @media (min-width: 1024px) {\n        height: 100vh;\n    }\n}"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, ".header {\n  z-index: 3;\n}\n.header__img {\n  position: relative;\n  width: 100vw;\n  height: 30vh;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n@media (min-width: 575px) {\n  .header__img {\n    height: 50vh;\n  }\n}\n@media (min-width: 1024px) {\n  .header__img {\n    height: 70vh;\n  }\n}\n\n.custom-bg {\n  position: relative;\n  width: 100vw;\n  height: 30vh;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n@media (min-width: 575px) {\n  .custom-bg {\n    height: 50vh;\n  }\n}\n@media (min-width: 1024px) {\n  .custom-bg {\n    height: 100vh;\n  }\n}", "",{"version":3,"sources":["webpack://./src/components/Header/header.scss"],"names":[],"mappings":"AAEA;EACI,UAAA;AADJ;AAGI;EACI,kBAAA;EACA,YAAA;EACA,YAAA;EACA,aAAA;EACA,uBAAA;EACA,mBAAA;AADR;AAIQ;EATJ;IAUQ,YAAA;EADV;AACF;AAGQ;EAbJ;IAcQ,YAAA;EAAV;AACF;;AAgDA;EACI,kBAAA;EACA,YAAA;EACA,YAAA;EACA,aAAA;EACA,uBAAA;EACA,mBAAA;AA7CJ;AAgDI;EATJ;IAUQ,YAAA;EA7CN;AACF;AA+CI;EAbJ;IAcQ,aAAA;EA5CN;AACF","sourcesContent":["\n\n.header {\n    z-index: 3;\n\n    &__img {\n        position: relative;\n        width: 100vw;\n        height: 30vh;\n        display: flex;\n        justify-content: center;\n        align-items: center;\n\n\n        @media (min-width: 575px) {\n            height: 50vh;\n        }\n\n        @media (min-width: 1024px) {\n            height: 70vh;\n        }\n\n        // &--logo {\n        //     position: absolute;\n        //     display: flex;\n        //     justify-content: center;\n        //     align-items: center;\n        //     overflow: hidden;\n        //     width: 175px;\n        //     height: 65px;\n        //     background-image: url(../../img/logo.svg);\n        //     background-position: 50% 50%;\n        //     background-repeat: no-repeat;\n        //     background-size: contain;\n\n        //     @media (min-width: 575px) {\n        //         width: 300px;\n        //         height: 100px;\n        //         background-size: cover;\n        //     }\n\n        //     @media (min-width: 1024px) {\n        //         width: 600px;\n        //         height: 200px;\n        //         background-size: cover;\n        //     }\n        // }\n    }\n\n    // &__bg {\n    //     // position: absolute;\n    //     width: 100%;\n    //     height: 30%;\n    //     background-image: url(../../img/header-bott.png);\n    //     background-repeat: no-repeat;\n    //     background-position: 50% 50%;\n    //     // background-size: contain;\n\n    //     @media (min-width: 575px) {\n    //         height: 50%;\n    //     }\n\n    //     @media (min-width: 1024px) {\n    //         height: 600px;\n    //     }\n    // }\n}\n\n.custom-bg {\n    position: relative;\n    width: 100vw;\n    height: 30vh;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n\n\n    @media (min-width: 575px) {\n        height: 50vh;\n    }\n\n    @media (min-width: 1024px) {\n        height: 100vh;\n    }\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -1636,7 +1717,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".menu {\n  position: absolute;\n  position: fixed;\n  padding: 90px 15px 0;\n  width: 100vw;\n  height: 100vh;\n  background: #195F85;\n  transform: translateX(100%);\n  transition: 0.3s;\n  z-index: 50;\n  -webkit-backdrop-filter: blur(4px);\n          backdrop-filter: blur(4px);\n}\n@media (min-width: 935px) {\n  .menu {\n    height: 65px;\n    background: transparent;\n    -webkit-backdrop-filter: blur(0px);\n            backdrop-filter: blur(0px);\n    transform: translateX(0);\n    padding: 18px 2% 0;\n  }\n}\n@media (min-width: 1024px) {\n  .menu {\n    padding: 25px 3% 0;\n  }\n}\n.menu__view {\n  transform: translateX(0);\n  transition: 0.3s;\n}\n.menu__content {\n  text-align: center;\n  text-transform: uppercase;\n}\n.menu__content--a {\n  font-family: \"Barlow\", sans-serif;\n  cursor: pointer;\n  font-weight: 500;\n  font-size: 16px;\n  line-height: 29px;\n  text-align: center;\n  color: white;\n  position: relative;\n  text-decoration: none;\n  --b: 0.1em; /* the thickness of the line */\n  --c: #fff; /* the color */\n  color: white;\n  padding-top: var(--b);\n  padding-bottom: var(--b);\n  background: linear-gradient(var(--c) 50%, #000 0) 0% calc(100% - 0%)/100% 200%, linear-gradient(var(--c) 0, var(--c) 0) 0% 0%/0% var(--b) no-repeat;\n  background: linear-gradient(var(--c) 50%, #000 0) 0% calc(100% - 0%)/100% 200%, linear-gradient(var(--c) 0 0) 0% 0%/0% var(--b) no-repeat;\n  background: linear-gradient(var(--c) 50%, #000 0) 0% calc(100% - var(--_p, 0%))/100% 200%, linear-gradient(var(--c) 0, var(--c) 0) 0% var(--_p, 0%)/var(--_p, 0%) var(--b) no-repeat;\n  background: linear-gradient(var(--c) 50%, #000 0) 0% calc(100% - var(--_p, 0%))/100% 200%, linear-gradient(var(--c) 0 0) 0% var(--_p, 0%)/var(--_p, 0%) var(--b) no-repeat;\n  -webkit-background-clip: text, padding-box;\n  background-clip: text, padding-box;\n  transition: 0.3s 0s linear, background-size 0.3s calc(0.3s - 0s);\n  transition: 0.3s var(--_s, 0s) linear, background-size 0.3s calc(0.3s - var(--_s, 0s));\n}\n@media (min-width: 575px) {\n  .menu__content--a {\n    font-size: 18px;\n  }\n}\n@media (min-width: 1116px) {\n  .menu__content--a {\n    font-size: 22px;\n  }\n}\n.menu__content--a:hover {\n  --_p: 100%;\n  --_s: .3s;\n}\n@media (min-width: 935px) {\n  .menu__content ul {\n    display: flex;\n    justify-content: flex-end;\n    align-items: center;\n  }\n}\n@media (min-width: 1210px) {\n  .menu__content ul {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n  }\n}\n.menu__content--li {\n  margin-bottom: 45px;\n}\n@media (min-width: 935px) {\n  .menu__content--li {\n    margin-left: 27px;\n    z-index: 70;\n    margin-bottom: 0;\n  }\n}\n\n.blur {\n  display: none;\n}\n@media (min-width: 935px) {\n  .blur {\n    display: block;\n    width: 100vw;\n    height: 65px;\n    background: transparent;\n    padding: 18px 5% 0;\n    position: absolute;\n    position: fixed;\n    top: 0;\n    right: 0;\n  }\n}", "",{"version":3,"sources":["webpack://./src/components/Navbar/menu.scss"],"names":[],"mappings":"AAEA;EACI,kBAAA;EACA,eAAA;EACA,oBAAA;EACA,YAAA;EACA,aAAA;EACA,mBAAA;EACA,2BAAA;EACA,gBAAA;EACA,WAAA;EACA,kCAAA;UAAA,0BAAA;AADJ;AAGI;EAZJ;IAaQ,YAAA;IACA,uBAAA;IAEA,kCAAA;YAAA,0BAAA;IACA,wBAAA;IACA,kBAAA;EADN;AACF;AAGI;EArBJ;IAsBQ,kBAAA;EAAN;AACF;AAGI;EACI,wBAAA;EACA,gBAAA;AADR;AAII;EACI,kBAAA;EACA,yBAAA;AAFR;AAKQ;EACI,iCAAA;EAEA,eAAA;EACA,gBAAA;EACA,eAAA;EACA,iBAAA;EACA,kBAAA;EACA,YAAA;EACA,kBAAA;EACA,qBAAA;EACA,UAAA,EAAA,8BAAA;EACA,SAAA,EAAA,cAAA;EACA,YAAA;EACA,qBAAA;EAAA,wBAAA;EACA,mJACI;EADJ,yIACI;EADJ,oLACI;EADJ,0KACI;EAEJ,0CAAA;EACQ,kCAAA;EACR,gEAAA;EAAA,sFAAA;AANZ;AAQY;EAtBJ;IAuBQ,eAAA;EALd;AACF;AAOY;EA1BJ;IA2BQ,eAAA;EAJd;AACF;AAMY;EACI,UAAA;EACA,SAAA;AAJhB;AAgBY;EAFJ;IAGQ,aAAA;IACA,yBAAA;IACA,mBAAA;EAbd;AACF;AAcY;EAPJ;IAQQ,aAAA;IACA,uBAAA;IACA,mBAAA;EAXd;AACF;AAcQ;EACI,mBAAA;AAZZ;AAcQ;EAHA;IAII,iBAAA;IACA,WAAA;IACA,gBAAA;EAXV;AACF;;AAgBA;EACA,aAAA;AAbA;AAcI;EAFJ;IAGI,cAAA;IACA,YAAA;IACA,YAAA;IACA,uBAAA;IACA,kBAAA;IACA,kBAAA;IACA,eAAA;IACA,MAAA;IACA,QAAA;EAXF;AACF","sourcesContent":["\n\n.menu {\n    position: absolute;\n    position: fixed;\n    padding: 90px 15px 0;\n    width: 100vw;\n    height: 100vh;\n    background:#195F85;\n    transform: translateX(100%);\n    transition: 0.3s;\n    z-index: 50;\n    backdrop-filter: blur(4px);\n\n    @media (min-width: 935px) {\n        height: 65px;\n        background: transparent;\n        // box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);\n        backdrop-filter: blur(0px);\n        transform: translateX(0);\n        padding: 18px 2% 0;\n    }\n\n    @media (min-width: 1024px) {\n        padding: 25px 3% 0;\n    }\n\n\n    &__view {\n        transform: translateX(0);\n        transition: 00.3s;\n    }\n\n    &__content {\n        text-align: center;\n        text-transform: uppercase;\n\n\n        &--a {\n            font-family:'Barlow', sans-serif;\n            // font-style: bold;\n            cursor: pointer;\n            font-weight: 500;\n            font-size: 16px;\n            line-height: 29px;\n            text-align: center;\n            color: white;\n            position: relative;\n            text-decoration: none;\n            --b: 0.1em;   /* the thickness of the line */\n            --c: #fff; /* the color */\n            color: #ffff;\n            padding-block: var(--b);\n            background:\n                linear-gradient(var(--c) 50%,#000 0) 0% calc(100% - var(--_p,0%))/100% 200%,\n                linear-gradient(var(--c) 0 0) 0% var(--_p,0%)/var(--_p,0%) var(--b) no-repeat;\n            -webkit-background-clip: text,padding-box;\n                    background-clip: text,padding-box;\n            transition: .3s var(--_s,0s) linear,background-size .3s calc(.3s - var(--_s,0s));\n\n            @media (min-width: 575px) {\n                font-size: 18px;\n            }\n\n            @media (min-width: 1116px) {\n                font-size: 22px;\n            }\n\n            &:hover {\n                --_p: 100%;\n                --_s: .3s;\n            }\n        }\n\n        // &.active &--a {\n        //     --_p: 100%;\n        //     --_s: .3s;\n        //     color: red;\n        // }\n\n        ul {\n\n            @media (min-width: 935px) {\n                display: flex;\n                justify-content: flex-end;\n                align-items: center;\n            }\n            @media (min-width: 1210px) {\n                display: flex;\n                justify-content: center;\n                align-items: center;\n            }\n        }\n\n        &--li {\n            margin-bottom: 45px;\n\n        @media (min-width: 935px) {\n            margin-left: 27px;\n            z-index: 70;\n            margin-bottom: 0;\n        }\n        }\n    }\n}\n\n.blur {\ndisplay: none;\n    @media (min-width: 935px) {\n    display: block;\n    width: 100vw;\n    height: 65px;\n    background: transparent;\n    padding: 18px 5% 0;\n    position: absolute;\n    position: fixed;\n    top: 0;\n    right: 0;\n    }\n}\n\n\n"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, ".menu {\n  position: absolute;\n  position: fixed;\n  padding: 90px 15px 0;\n  width: 100vw;\n  height: 100vh;\n  background: #3488B2;\n  transform: translateX(100%);\n  transition: 0.3s;\n  z-index: 50;\n  -webkit-backdrop-filter: blur(4px);\n          backdrop-filter: blur(4px);\n}\n@media (min-width: 935px) {\n  .menu {\n    height: 65px;\n    background: transparent;\n    -webkit-backdrop-filter: blur(0px);\n            backdrop-filter: blur(0px);\n    transform: translateX(0);\n    padding: 18px 2% 0;\n  }\n}\n@media (min-width: 1024px) {\n  .menu {\n    padding: 25px 3% 0;\n  }\n}\n.menu__view {\n  transform: translateX(0);\n  transition: 0.3s;\n}\n.menu__content {\n  text-align: center;\n  text-transform: uppercase;\n}\n.menu__content--a {\n  font-family: \"Barlow\", sans-serif;\n  cursor: pointer;\n  font-weight: 500;\n  font-size: 16px;\n  line-height: 29px;\n  text-align: center;\n  color: white;\n  position: relative;\n  text-decoration: none;\n  --b: 0.1em; /* the thickness of the line */\n  --c: #fff; /* the color */\n  color: white;\n  padding-top: var(--b);\n  padding-bottom: var(--b);\n  background: linear-gradient(var(--c) 50%, #000 0) 0% calc(100% - 0%)/100% 200%, linear-gradient(var(--c) 0, var(--c) 0) 0% 0%/0% var(--b) no-repeat;\n  background: linear-gradient(var(--c) 50%, #000 0) 0% calc(100% - 0%)/100% 200%, linear-gradient(var(--c) 0 0) 0% 0%/0% var(--b) no-repeat;\n  background: linear-gradient(var(--c) 50%, #000 0) 0% calc(100% - var(--_p, 0%))/100% 200%, linear-gradient(var(--c) 0, var(--c) 0) 0% var(--_p, 0%)/var(--_p, 0%) var(--b) no-repeat;\n  background: linear-gradient(var(--c) 50%, #000 0) 0% calc(100% - var(--_p, 0%))/100% 200%, linear-gradient(var(--c) 0 0) 0% var(--_p, 0%)/var(--_p, 0%) var(--b) no-repeat;\n  -webkit-background-clip: text, padding-box;\n  background-clip: text, padding-box;\n  transition: 0.3s 0s linear, background-size 0.3s calc(0.3s - 0s);\n  transition: 0.3s var(--_s, 0s) linear, background-size 0.3s calc(0.3s - var(--_s, 0s));\n}\n@media (min-width: 575px) {\n  .menu__content--a {\n    font-size: 18px;\n  }\n}\n@media (min-width: 1116px) {\n  .menu__content--a {\n    font-size: 22px;\n  }\n}\n.menu__content--a:hover {\n  --_p: 100%;\n  --_s: .3s;\n}\n@media (min-width: 935px) {\n  .menu__content ul {\n    display: flex;\n    justify-content: flex-end;\n    align-items: center;\n  }\n}\n@media (min-width: 1210px) {\n  .menu__content ul {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n  }\n}\n.menu__content--li {\n  margin-bottom: 45px;\n}\n@media (min-width: 935px) {\n  .menu__content--li {\n    margin-left: 27px;\n    z-index: 70;\n    margin-bottom: 0;\n  }\n}\n\n.blur {\n  display: none;\n}\n@media (min-width: 935px) {\n  .blur {\n    display: block;\n    width: 100vw;\n    height: 65px;\n    background: transparent;\n    padding: 18px 5% 0;\n    position: absolute;\n    position: fixed;\n    top: 0;\n    right: 0;\n  }\n}", "",{"version":3,"sources":["webpack://./src/components/Navbar/menu.scss"],"names":[],"mappings":"AAEA;EACI,kBAAA;EACA,eAAA;EACA,oBAAA;EACA,YAAA;EACA,aAAA;EACA,mBAAA;EACA,2BAAA;EACA,gBAAA;EACA,WAAA;EACA,kCAAA;UAAA,0BAAA;AADJ;AAGI;EAZJ;IAaQ,YAAA;IACA,uBAAA;IAEA,kCAAA;YAAA,0BAAA;IACA,wBAAA;IACA,kBAAA;EADN;AACF;AAGI;EArBJ;IAsBQ,kBAAA;EAAN;AACF;AAGI;EACI,wBAAA;EACA,gBAAA;AADR;AAII;EACI,kBAAA;EACA,yBAAA;AAFR;AAKQ;EACI,iCAAA;EAEA,eAAA;EACA,gBAAA;EACA,eAAA;EACA,iBAAA;EACA,kBAAA;EACA,YAAA;EACA,kBAAA;EACA,qBAAA;EACA,UAAA,EAAA,8BAAA;EACA,SAAA,EAAA,cAAA;EACA,YAAA;EACA,qBAAA;EAAA,wBAAA;EACA,mJACI;EADJ,yIACI;EADJ,oLACI;EADJ,0KACI;EAEJ,0CAAA;EACQ,kCAAA;EACR,gEAAA;EAAA,sFAAA;AANZ;AAQY;EAtBJ;IAuBQ,eAAA;EALd;AACF;AAOY;EA1BJ;IA2BQ,eAAA;EAJd;AACF;AAMY;EACI,UAAA;EACA,SAAA;AAJhB;AAgBY;EAFJ;IAGQ,aAAA;IACA,yBAAA;IACA,mBAAA;EAbd;AACF;AAcY;EAPJ;IAQQ,aAAA;IACA,uBAAA;IACA,mBAAA;EAXd;AACF;AAcQ;EACI,mBAAA;AAZZ;AAcQ;EAHA;IAII,iBAAA;IACA,WAAA;IACA,gBAAA;EAXV;AACF;;AAgBA;EACA,aAAA;AAbA;AAcI;EAFJ;IAGI,cAAA;IACA,YAAA;IACA,YAAA;IACA,uBAAA;IACA,kBAAA;IACA,kBAAA;IACA,eAAA;IACA,MAAA;IACA,QAAA;EAXF;AACF","sourcesContent":["\n\n.menu {\n    position: absolute;\n    position: fixed;\n    padding: 90px 15px 0;\n    width: 100vw;\n    height: 100vh;\n    background:#3488B2;\n    transform: translateX(100%);\n    transition: 0.3s;\n    z-index: 50;\n    backdrop-filter: blur(4px);\n\n    @media (min-width: 935px) {\n        height: 65px;\n        background: transparent;\n        // box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);\n        backdrop-filter: blur(0px);\n        transform: translateX(0);\n        padding: 18px 2% 0;\n    }\n\n    @media (min-width: 1024px) {\n        padding: 25px 3% 0;\n    }\n\n\n    &__view {\n        transform: translateX(0);\n        transition: 00.3s;\n    }\n\n    &__content {\n        text-align: center;\n        text-transform: uppercase;\n\n\n        &--a {\n            font-family:'Barlow', sans-serif;\n            // font-style: bold;\n            cursor: pointer;\n            font-weight: 500;\n            font-size: 16px;\n            line-height: 29px;\n            text-align: center;\n            color: white;\n            position: relative;\n            text-decoration: none;\n            --b: 0.1em;   /* the thickness of the line */\n            --c: #fff; /* the color */\n            color: #ffff;\n            padding-block: var(--b);\n            background:\n                linear-gradient(var(--c) 50%,#000 0) 0% calc(100% - var(--_p,0%))/100% 200%,\n                linear-gradient(var(--c) 0 0) 0% var(--_p,0%)/var(--_p,0%) var(--b) no-repeat;\n            -webkit-background-clip: text,padding-box;\n                    background-clip: text,padding-box;\n            transition: .3s var(--_s,0s) linear,background-size .3s calc(.3s - var(--_s,0s));\n\n            @media (min-width: 575px) {\n                font-size: 18px;\n            }\n\n            @media (min-width: 1116px) {\n                font-size: 22px;\n            }\n\n            &:hover {\n                --_p: 100%;\n                --_s: .3s;\n            }\n        }\n\n        // &.active &--a {\n        //     --_p: 100%;\n        //     --_s: .3s;\n        //     color: red;\n        // }\n\n        ul {\n\n            @media (min-width: 935px) {\n                display: flex;\n                justify-content: flex-end;\n                align-items: center;\n            }\n            @media (min-width: 1210px) {\n                display: flex;\n                justify-content: center;\n                align-items: center;\n            }\n        }\n\n        &--li {\n            margin-bottom: 45px;\n\n        @media (min-width: 935px) {\n            margin-left: 27px;\n            z-index: 70;\n            margin-bottom: 0;\n        }\n        }\n    }\n}\n\n.blur {\ndisplay: none;\n    @media (min-width: 935px) {\n    display: block;\n    width: 100vw;\n    height: 65px;\n    background: transparent;\n    padding: 18px 5% 0;\n    position: absolute;\n    position: fixed;\n    top: 0;\n    right: 0;\n    }\n}\n\n\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -1668,32 +1749,6 @@ var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBP
 var ___CSS_LOADER_URL_REPLACEMENT_0___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_0___);
 // Module
 ___CSS_LOADER_EXPORT___.push([module.id, ".nav {\n  position: relative;\n  position: fixed;\n  width: 100%;\n  height: 45px;\n  z-index: 60;\n  background: #195F85;\n  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);\n}\n@media (min-width: 575px) {\n  .nav {\n    height: 60px;\n    z-index: 51;\n  }\n}\n@media (min-width: 935px) {\n  .nav {\n    width: 15%;\n    background: transparent;\n    box-shadow: none;\n  }\n}\n.nav__link {\n  display: block;\n  width: 50px;\n  height: 30px;\n  position: absolute;\n  top: 8px;\n  left: 15px;\n  cursor: pointer;\n  z-index: 80;\n}\n.nav__link--logo {\n  display: none;\n}\n@media (min-width: 935px) {\n  .nav__link--logo {\n    display: block;\n    background-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\n    background-repeat: no-repeat;\n    background-size: contain;\n    background-position: 50% 50%;\n    width: 100px;\n    height: 40px;\n    margin-top: 6px;\n  }\n}\n@media (min-width: 1024px) {\n  .nav__link--logo {\n    width: 140px;\n    height: 50px;\n    margin-top: 0;\n  }\n}\n.nav__link--logo2 {\n  width: 80px;\n  height: 30px;\n  background-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\n  background-repeat: no-repeat;\n  background-size: contain;\n  background-position: 50% 50%;\n}\n@media (min-width: 575px) {\n  .nav__link--logo2 {\n    width: 100px;\n    height: 40px;\n    margin-top: 6px;\n  }\n}\n@media (min-width: 935px) {\n  .nav__link--logo2 {\n    display: none;\n  }\n}\n.nav__burger {\n  display: flex;\n  flex: content;\n  position: absolute;\n  width: 30px;\n  height: 18px;\n  right: 15px;\n  top: 14px;\n  cursor: pointer;\n}\n@media (min-width: 575px) {\n  .nav__burger {\n    top: 20px;\n    width: 40px;\n    height: 28px;\n  }\n}\n@media (min-width: 935px) {\n  .nav__burger {\n    display: none;\n  }\n}\n.nav__burger--btn, .nav__burger ::after, .nav__burger ::before {\n  display: block;\n  position: absolute;\n  width: 100%;\n  height: 3px;\n  background: #FFFFFF;\n  border-radius: 2px;\n  transition: 300ms;\n}\n.nav__burger--btn {\n  top: 6px;\n  transition: all 0.5s cubic-bezier(0.1, 0.9, 0, 1.2);\n}\n.nav__burger--btn::after {\n  content: \"\";\n  bottom: -6px;\n  transition: all 0.5s cubic-bezier(0.1, 0.9, 0, 1.2);\n}\n@media (min-width: 575px) {\n  .nav__burger--btn::after {\n    bottom: -10px;\n  }\n}\n.nav__burger--btn::before {\n  content: \"\";\n  top: -6px;\n  transition: all 0.5s cubic-bezier(0.1, 0.9, 0, 1.2);\n}\n@media (min-width: 575px) {\n  .nav__burger--btn::before {\n    top: -10px;\n  }\n}\n.nav__burger .active {\n  background: rgba(255, 255, 255, 0);\n  transition: none;\n}\n.nav__burger .active::after {\n  content: \"\";\n  bottom: 0;\n  transform: rotate(45deg);\n  transition: all 0.5s cubic-bezier(0.1, 0.9, 0, 1.2);\n}\n.nav__burger .active::before {\n  content: \"\";\n  top: 0;\n  transform: rotate(135deg);\n  transition: all 0.5s cubic-bezier(0.1, 0.9, 0, 1.2);\n}", "",{"version":3,"sources":["webpack://./src/components/Navbar/navbar.scss"],"names":[],"mappings":"AAEA;EACI,kBAAA;EACA,eAAA;EACA,WAAA;EACA,YAAA;EACA,WAAA;EACA,mBAAA;EACA,2CAAA;AADJ;AAII;EAVJ;IAWQ,YAAA;IACA,WAAA;EADN;AACF;AAGI;EAfJ;IAgBQ,UAAA;IACA,uBAAA;IACA,gBAAA;EAAN;AACF;AAEI;EACI,cAAA;EACA,WAAA;EACA,YAAA;EACA,kBAAA;EACA,QAAA;EACA,UAAA;EACA,eAAA;EACA,WAAA;AAAR;AAEQ;EACI,aAAA;AAAZ;AAGY;EAJJ;IAKQ,cAAA;IACA,yDAAA;IACA,4BAAA;IACA,wBAAA;IACA,4BAAA;IACA,YAAA;IACA,YAAA;IACA,eAAA;EAAd;AACF;AAEY;EAfJ;IAgBQ,YAAA;IACA,YAAA;IACA,aAAA;EACd;AACF;AAEQ;EACI,WAAA;EACA,YAAA;EACA,yDAAA;EACA,4BAAA;EACA,wBAAA;EACA,4BAAA;AAAZ;AAEY;EARJ;IASQ,YAAA;IACA,YAAA;IACA,eAAA;EACd;AACF;AACY;EAdJ;IAeQ,aAAA;EAEd;AACF;AAEI;EACI,aAAA;EACA,aAAA;EACA,kBAAA;EACA,WAAA;EACA,YAAA;EACA,WAAA;EACA,SAAA;EACA,eAAA;AAAR;AAEQ;EAVJ;IAWQ,SAAA;IACA,WAAA;IACA,YAAA;EACV;AACF;AAAQ;EAfJ;IAgBQ,aAAA;EAGV;AACF;AADQ;EACI,cAAA;EACA,kBAAA;EACA,WAAA;EACA,WAAA;EACA,mBAAA;EACA,kBAAA;EACA,iBAAA;AAGZ;AAAQ;EACI,QAAA;EACA,mDAAA;AAEZ;AACQ;EACI,WAAA;EACA,YAAA;EACA,mDAAA;AACZ;AACY;EALJ;IAMQ,aAAA;EAEd;AACF;AACQ;EACI,WAAA;EACA,SAAA;EACA,mDAAA;AACZ;AACY;EALJ;IAMQ,UAAA;EAEd;AACF;AACQ;EACI,kCAAA;EACA,gBAAA;AACZ;AAEQ;EACI,WAAA;EACA,SAAA;EACA,wBAAA;EAGA,mDAAA;AAFZ;AAKQ;EACI,WAAA;EACA,MAAA;EACA,yBAAA;EAGA,mDAAA;AALZ","sourcesContent":["\n\n.nav {\n    position: relative;\n    position: fixed;\n    width: 100%;\n    height: 45px;\n    z-index: 60;\n    background: #195F85;\n    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);\n\n\n    @media (min-width: 575px) {\n        height: 60px;\n        z-index: 51;\n    }\n\n    @media (min-width: 935px) {\n        width: 15%;\n        background: transparent;\n        box-shadow: none;\n    }\n\n    &__link{\n        display: block;\n        width: 50px;\n        height: 30px;\n        position: absolute;\n        top: 8px;\n        left: 15px;\n        cursor: pointer;\n        z-index: 80;\n\n        &--logo {\n            display: none;\n\n\n            @media (min-width: 935px) {\n                display: block;\n                background-image: url(../../img/logo.svg);\n                background-repeat: no-repeat;\n                background-size: contain;\n                background-position: 50% 50%;\n                width: 100px;\n                height: 40px;\n                margin-top: 6px;\n            }\n\n            @media (min-width: 1024px) {\n                width: 140px;\n                height: 50px;\n                margin-top: 0;\n            }\n        }\n\n        &--logo2 {\n            width: 80px;\n            height: 30px;\n            background-image: url(../../img/logo.svg);\n            background-repeat: no-repeat;\n            background-size: contain;\n            background-position: 50% 50%;\n\n            @media (min-width: 575px) {\n                width: 100px;\n                height: 40px;\n                margin-top: 6px;\n            }\n\n            @media (min-width: 935px) {\n                display: none;\n            }\n        }\n    }\n\n    &__burger {\n        display: flex;\n        flex: content;\n        position: absolute;\n        width: 30px;\n        height: 18px;\n        right: 15px;\n        top: 14px;\n        cursor: pointer;\n\n        @media (min-width: 575px) {\n            top: 20px;\n            width: 40px;\n            height: 28px;\n        }\n        @media (min-width: 935px) {\n            display: none;\n        }\n\n        &--btn, ::after, ::before {\n            display: block;\n            position: absolute;\n            width: 100%;\n            height: 3px;\n            background: #FFFFFF;\n            border-radius: 2px;\n            transition: 300ms;\n        }\n\n        &--btn {\n            top: 6px;\n            transition: all .5s cubic-bezier(.1, .9, 0, 1.2);\n        }\n\n        &--btn::after {\n            content: '';\n            bottom: -6px;\n            transition: all .5s cubic-bezier(.1, .9, 0, 1.2);\n\n            @media (min-width: 575px) {\n                bottom: -10px;\n            }\n        }\n\n        &--btn::before {\n            content: '';\n            top: -6px;\n            transition: all .5s cubic-bezier(.1, .9, 0, 1.2);\n\n            @media (min-width: 575px) {\n                top: -10px;\n            }\n        }\n\n        .active {\n            background: rgba(255,255,255,0);\n            transition: none;\n        }\n\n        .active::after {\n            content: '';\n            bottom: 0;\n            transform: rotate(45deg);\n            // transition: bottom 300ms, transform 300ms 300ms;\n            // transition: cubic-bazier(0.68, -0.55, 0, 1.55);\n            transition: all .5s cubic-bezier(.1, .9, 0, 1.2);\n        }\n\n        .active::before {\n            content: '';\n            top: 0;\n            transform: rotate(135deg);\n            // transition: top 300ms, transform 300ms 300ms;\n            // transition: cubic-bazier(0.68, -0.55, 0, 1.55);\n            transition: all .5s cubic-bezier(.1, .9, 0, 1.2);\n        }\n\n    }\n}"],"sourceRoot":""}]);
-// Exports
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
-
-
-/***/ }),
-
-/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./node_modules/sass-loader/dist/cjs.js!./src/components/Objects/Card/Feature.scss":
-/*!*****************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./node_modules/sass-loader/dist/cjs.js!./src/components/Objects/Card/Feature.scss ***!
-  \*****************************************************************************************************************************************************************************************************/
-/***/ ((module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/sourceMaps.js */ "./node_modules/css-loader/dist/runtime/sourceMaps.js");
-/* harmony import */ var _node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
-/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
-// Imports
-
-
-var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
-// Module
-___CSS_LOADER_EXPORT___.push([module.id, ".feature {\n  display: flex;\n  align-items: center;\n  margin-right: 20px;\n}\n\n.feature__circle {\n  width: 30px;\n  height: 30px;\n  border-radius: 50%;\n  background-color: #f1f1f1;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  margin-right: 4px;\n}\n\n.feature__icon {\n  color: #737373;\n}\n\n.feature__label {\n  white-space: nowrap;\n}", "",{"version":3,"sources":["webpack://./src/components/Objects/Card/Feature.scss"],"names":[],"mappings":"AAAA;EACE,aAAA;EACA,mBAAA;EACA,kBAAA;AACF;;AAEA;EACE,WAAA;EACA,YAAA;EACA,kBAAA;EACA,yBAAA;EACA,aAAA;EACA,uBAAA;EACA,mBAAA;EACA,iBAAA;AACF;;AAEA;EACE,cAAA;AACF;;AAEA;EACE,mBAAA;AACF","sourcesContent":[".feature {\n  display: flex;\n  align-items: center;\n  margin-right: 20px;\n}\n\n.feature__circle {\n  width: 30px;\n  height: 30px;\n  border-radius: 50%;\n  background-color: #f1f1f1;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  margin-right: 4px;\n}\n\n.feature__icon {\n  color: #737373;\n}\n\n.feature__label {\n  white-space: nowrap;\n}\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -1745,7 +1800,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".modal {\n  font-family: \"Barlow\", sans-serif;\n  font-style: normal;\n  font-weight: 500;\n  min-height: 600px;\n  border-radius: 20px;\n  position: relative;\n  background-color: white;\n  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;\n  display: flex;\n}\n.modal .slick-track {\n  height: 100%;\n}\n@media (min-width: 358px) {\n  .modal .slick-track {\n    height: 500px;\n  }\n}\n.modal .slick-next {\n  right: 10px;\n}\n.modal .slick-prev {\n  left: 10px;\n  z-index: 1;\n}\n.modal__image {\n  border-radius: 20px;\n}\n.modal__image img {\n  -o-object-fit: contain;\n     object-fit: contain;\n}\n.modal__info {\n  background-color: white;\n  display: flex;\n}\n.modal__row {\n  margin: 20px 0px;\n  display: flex;\n  text-align: center;\n}\n.modal__description-wrapper {\n  margin: 20px 0px;\n  text-align: left;\n  overflow-y: scroll;\n  display: flex;\n}\n.modal__price {\n  font-size: 1.5rem;\n  text-align: center;\n}\n@media (min-width: 785px) {\n  .modal__price {\n    font-size: 27px;\n  }\n}\n.modal__address {\n  font-size: 1.5rem;\n  color: #737373;\n}\n.modal__description {\n  color: #737373;\n  margin: 0px;\n  padding: 0px;\n  font-size: 1.25rem;\n}\n.modal__close-wrapper {\n  all: unset;\n  position: absolute;\n  cursor: pointer;\n}\n.modal__close-icon {\n  width: 40px;\n  height: 40px;\n}\n\n@media only screen {\n  .modal {\n    width: 90%;\n    height: auto;\n    flex-direction: column;\n    justify-content: space-between;\n    align-items: center;\n    padding: 15px;\n  }\n  .modal__image {\n    width: 100%;\n  }\n  .modal__info {\n    width: 100%;\n    height: 100%;\n    padding: 20px;\n    flex-direction: column;\n    align-items: center;\n  }\n  .modal__close-wrapper {\n    right: -20px;\n    top: -30px;\n  }\n  .modal__close-icon {\n    width: 35px;\n    height: 35px;\n    color: #cacaca;\n  }\n}\n@media only screen and (min-width: 1281px) {\n  .modal {\n    width: 80%;\n    height: 80%;\n    max-width: 1800px;\n    justify-content: space-between;\n    align-items: center;\n    flex-direction: row;\n    padding: 30px;\n  }\n  .modal__image {\n    width: calc(70% - 10px);\n    height: 100%;\n  }\n  .modal__info {\n    width: calc(30% - 10px);\n    height: 100%;\n    padding: 20px;\n    flex-direction: column;\n    align-items: flex-start;\n  }\n  .modal__close-wrapper {\n    right: 10px;\n    top: 10px;\n  }\n  .modal__close-icon {\n    color: #737373;\n  }\n}", "",{"version":3,"sources":["webpack://./src/components/Objects/Card/Modal.scss"],"names":[],"mappings":"AAAA;EACE,iCAAA;EACA,kBAAA;EACA,gBAAA;EACA,iBAAA;EACA,mBAAA;EACA,kBAAA;EACA,uBAAA;EACA,iDAAA;EACA,aAAA;AACF;AACE;EACE,YAAA;AACJ;AACI;EAHF;IAIM,aAAA;EAEN;AACF;AACA;EACE,WAAA;AACF;AAEA;EACE,UAAA;EACA,UAAA;AAAF;AAGA;EACE,mBAAA;AADF;AAEE;EACE,sBAAA;KAAA,mBAAA;AAAJ;AAIA;EACE,uBAAA;EACA,aAAA;AAFF;AAKA;EACE,gBAAA;EACA,aAAA;EAGA,kBAAA;AALF;AAQA;EACE,gBAAA;EACA,gBAAA;EACA,kBAAA;EACA,aAAA;AANF;AAWA;EACE,iBAAA;EACA,kBAAA;AATF;AAWA;EAJA;IAKE,eAAA;EARA;AACF;AAeA;EACE,iBAAA;EACA,cAAA;AAbF;AAgBA;EACE,cAAA;EACA,WAAA;EACA,YAAA;EACA,kBAAA;AAdF;AAiBA;EACE,UAAA;EACA,kBAAA;EACA,eAAA;AAfF;AAkBA;EACE,WAAA;EACA,YAAA;AAhBF;;AAqBA;EACE;IACE,UAAA;IACA,YAAA;IACA,sBAAA;IACA,8BAAA;IACA,mBAAA;IACA,aAAA;EAlBF;EAqBA;IACE,WAAA;EAnBF;EAsBA;IACE,WAAA;IACA,YAAA;IACA,aAAA;IACA,sBAAA;IACA,mBAAA;EApBF;EAuBA;IACE,YAAA;IACA,UAAA;EArBF;EAwBA;IACE,WAAA;IACA,YAAA;IACA,cAAA;EAtBF;AACF;AAyBA;EACE;IACE,UAAA;IACA,WAAA;IACA,iBAAA;IACA,8BAAA;IACA,mBAAA;IACA,mBAAA;IACA,aAAA;EAvBF;EA0BA;IACE,uBAAA;IACA,YAAA;EAxBF;EA2BA;IACE,uBAAA;IACA,YAAA;IACA,aAAA;IACA,sBAAA;IACA,uBAAA;EAzBF;EA4BA;IACE,WAAA;IACA,SAAA;EA1BF;EA6BA;IACE,cAAA;EA3BF;AACF","sourcesContent":[".modal {\n  font-family: 'Barlow', sans-serif;\n  font-style: normal;\n  font-weight: 500;\n  min-height: 600px;\n  border-radius: 20px;\n  position: relative;\n  background-color: white;\n  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;\n  display: flex;\n\n  .slick-track {\n    height: 100%;\n\n    @media (min-width: 358px) {\n        height: 500px;\n    }\n}\n\n.slick-next {\n  right: 10px;\n}\n\n.slick-prev {\n  left: 10px;\n  z-index: 1;\n}\n\n&__image {\n  border-radius: 20px;\n  img {\n    object-fit: contain;\n  }\n}\n\n&__info {\n  background-color: white;\n  display: flex;\n}\n\n&__row {\n  margin: 20px 0px;\n  display: flex;\n  // align-items: center;\n  // justify-content: center;\n  text-align: center;\n}\n\n&__description-wrapper {\n  margin: 20px 0px;\n  text-align: left;\n  overflow-y: scroll;\n  display: flex;\n  // align-items: flex-start;\n  // justify-content: flex-start;\n}\n\n&__price {\n  font-size: 1.5rem;\n  text-align: center;\n\n@media (min-width:785px) {\n  font-size: 27px;\n}\n\n// @media (min-width:1024px) {\n//   font-size: 3rem;\n// }\n}\n\n&__address {\n  font-size: 1.5rem;\n  color: #737373;\n}\n\n&__description {\n  color: #737373;\n  margin: 0px;\n  padding: 0px;\n  font-size: 1.25rem;\n}\n\n&__close-wrapper {\n  all: unset;\n  position: absolute;\n  cursor: pointer;\n}\n\n&__close-icon {\n  width: 40px;\n  height: 40px;\n}\n}\n\n\n@media only screen {\n  .modal {\n    width: 90%;\n    height: auto;\n    flex-direction: column;\n    justify-content: space-between;\n    align-items: center;\n    padding: 15px;\n  }\n\n  .modal__image {\n    width: 100%;\n  }\n\n  .modal__info {\n    width: calc(100%);\n    height: 100%;\n    padding: 20px;\n    flex-direction: column;\n    align-items: center;\n  }\n\n  .modal__close-wrapper {\n    right: -20px;\n    top: -30px;\n  }\n\n  .modal__close-icon {\n    width: 35px;\n    height: 35px;\n    color: #cacaca;\n  }\n}\n\n@media only screen and (min-width: 1281px) {\n  .modal {\n    width: 80%;\n    height: 80%;\n    max-width: 1800px;\n    justify-content: space-between;\n    align-items: center;\n    flex-direction: row;\n    padding: 30px;\n  }\n\n  .modal__image {\n    width: calc(70% - 10px);\n    height: 100%;\n  }\n\n  .modal__info {\n    width: calc(30% - 10px);\n    height: 100%;\n    padding: 20px;\n    flex-direction: column;\n    align-items: flex-start;\n  }\n\n  .modal__close-wrapper {\n    right: 10px;\n    top: 10px;\n  }\n\n  .modal__close-icon {\n    color: #737373;\n  }\n}\n"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, ".modal {\n  font-family: \"Barlow\", sans-serif;\n  font-style: normal;\n  font-weight: 500;\n  min-height: 600px;\n  border-radius: 20px;\n  position: relative;\n  background-color: white;\n  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;\n  display: flex;\n}\n.modal .slick-track {\n  height: 100%;\n  height: 300px;\n}\n@media (min-width: 454px) {\n  .modal .slick-track {\n    height: 400px;\n  }\n}\n.modal .slick-next {\n  right: 10px;\n}\n.modal .slick-prev {\n  left: 10px;\n  z-index: 1;\n}\n.modal__image {\n  border-radius: 20px;\n}\n.modal__image img {\n  -o-object-fit: contain;\n     object-fit: contain;\n}\n.modal__info {\n  background-color: white;\n  display: flex;\n}\n.modal__row {\n  margin: 20px 0px;\n  display: flex;\n  text-align: center;\n}\n.modal__description-wrapper {\n  margin: 20px 0px;\n  text-align: left;\n  overflow-y: scroll;\n  display: flex;\n}\n.modal__price {\n  font-size: 1.5rem;\n  text-align: center;\n}\n@media (min-width: 785px) {\n  .modal__price {\n    font-size: 27px;\n  }\n}\n.modal__address {\n  font-size: 1.5rem;\n  color: #737373;\n}\n.modal__description {\n  color: #737373;\n  margin: 0px;\n  padding: 0px;\n  font-size: 1.25rem;\n}\n.modal__close-wrapper {\n  all: unset;\n  position: absolute;\n  cursor: pointer;\n}\n.modal__close-icon {\n  width: 40px;\n  height: 40px;\n}\n\n@media only screen {\n  .modal {\n    width: 90%;\n    height: auto;\n    flex-direction: column;\n    justify-content: space-around;\n    align-items: center;\n    padding: 15px;\n  }\n  .modal__image {\n    width: 100%;\n  }\n  .modal__info {\n    width: 100%;\n    height: 100%;\n    padding: 20px;\n    flex-direction: column;\n    align-items: center;\n  }\n  .modal__close-wrapper {\n    right: -20px;\n    top: -30px;\n  }\n  .modal__close-icon {\n    width: 35px;\n    height: 35px;\n    color: #cacaca;\n  }\n}\n@media only screen and (min-width: 1181px) {\n  .modal {\n    width: 80%;\n    height: 80%;\n    max-width: 1800px;\n    justify-content: space-between;\n    align-items: center;\n    flex-direction: row;\n    padding: 30px;\n  }\n  .modal__image {\n    width: calc(70% - 10px);\n    height: 100%;\n  }\n  .modal__info {\n    width: calc(30% - 10px);\n    height: 100%;\n    padding: 20px;\n    flex-direction: column;\n    align-items: flex-start;\n  }\n  .modal__close-wrapper {\n    right: 10px;\n    top: 10px;\n  }\n  .modal__description {\n    font-size: 18px;\n    color: #555;\n    text-align: center;\n    margin-top: 10px;\n  }\n  .modal__close-icon {\n    color: #737373;\n  }\n}\n.modal__image {\n  width: 100%;\n  max-width: 600px;\n  margin: 0 auto;\n}\n\n.modal__slide {\n  text-align: center;\n}\n\n.modal__slide-image {\n  max-width: 100%;\n  height: auto;\n  border-radius: 10px;\n}", "",{"version":3,"sources":["webpack://./src/components/Objects/Card/Modal.scss"],"names":[],"mappings":"AAAA;EACE,iCAAA;EACA,kBAAA;EACA,gBAAA;EACA,iBAAA;EACA,mBAAA;EACA,kBAAA;EACA,uBAAA;EACA,iDAAA;EACA,aAAA;AACF;AACE;EACE,YAAA;EACA,aAAA;AACJ;AACI;EAJF;IAKM,aAAA;EAEN;AACF;AACA;EACE,WAAA;AACF;AAEA;EACE,UAAA;EACA,UAAA;AAAF;AAGA;EACE,mBAAA;AADF;AAEE;EACE,sBAAA;KAAA,mBAAA;AAAJ;AAIA;EACE,uBAAA;EACA,aAAA;AAFF;AAKA;EACE,gBAAA;EACA,aAAA;EAGA,kBAAA;AALF;AAQA;EACE,gBAAA;EACA,gBAAA;EACA,kBAAA;EACA,aAAA;AANF;AAWA;EACE,iBAAA;EACA,kBAAA;AATF;AAWA;EAJA;IAKE,eAAA;EARA;AACF;AAeA;EACE,iBAAA;EACA,cAAA;AAbF;AAgBA;EACE,cAAA;EACA,WAAA;EACA,YAAA;EACA,kBAAA;AAdF;AAiBA;EACE,UAAA;EACA,kBAAA;EACA,eAAA;AAfF;AAkBA;EACE,WAAA;EACA,YAAA;AAhBF;;AAqBA;EACE;IACE,UAAA;IACA,YAAA;IACA,sBAAA;IACA,6BAAA;IACA,mBAAA;IACA,aAAA;EAlBF;EAqBA;IACE,WAAA;EAnBF;EAsBA;IACE,WAAA;IACA,YAAA;IACA,aAAA;IACA,sBAAA;IACA,mBAAA;EApBF;EAuBA;IACE,YAAA;IACA,UAAA;EArBF;EAwBA;IACE,WAAA;IACA,YAAA;IACA,cAAA;EAtBF;AACF;AAyBA;EACE;IACE,UAAA;IACA,WAAA;IACA,iBAAA;IACA,8BAAA;IACA,mBAAA;IACA,mBAAA;IACA,aAAA;EAvBF;EA0BA;IACE,uBAAA;IACA,YAAA;EAxBF;EA2BA;IACE,uBAAA;IACA,YAAA;IACA,aAAA;IACA,sBAAA;IACA,uBAAA;EAzBF;EA4BA;IACE,WAAA;IACA,SAAA;EA1BF;EA4BA;IACE,eAAA;IACA,WAAA;IACA,kBAAA;IACA,gBAAA;EA1BF;EA6BA;IACE,cAAA;EA3BF;AACF;AA8BA;EACE,WAAA;EACA,gBAAA;EACA,cAAA;AA5BF;;AA+BA;EACE,kBAAA;AA5BF;;AA+BA;EACE,eAAA;EACA,YAAA;EACA,mBAAA;AA5BF","sourcesContent":[".modal {\n  font-family: 'Barlow', sans-serif;\n  font-style: normal;\n  font-weight: 500;\n  min-height: 600px;\n  border-radius: 20px;\n  position: relative;\n  background-color: white;\n  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;\n  display: flex;\n\n  .slick-track {\n    height: 100%;\n    height: 300px;\n\n    @media (min-width: 454px) {\n        height: 400px;\n    }\n}\n\n.slick-next {\n  right: 10px;\n}\n\n.slick-prev {\n  left: 10px;\n  z-index: 1;\n}\n\n&__image {\n  border-radius: 20px;\n  img {\n    object-fit: contain;\n  }\n}\n\n&__info {\n  background-color: white;\n  display: flex;\n}\n\n&__row {\n  margin: 20px 0px;\n  display: flex;\n  // align-items: center;\n  // justify-content: center;\n  text-align: center;\n}\n\n&__description-wrapper {\n  margin: 20px 0px;\n  text-align: left;\n  overflow-y: scroll;\n  display: flex;\n  // align-items: flex-start;\n  // justify-content: flex-start;\n}\n\n&__price {\n  font-size: 1.5rem;\n  text-align: center;\n\n@media (min-width:785px) {\n  font-size: 27px;\n}\n\n// @media (min-width:1024px) {\n//   font-size: 3rem;\n// }\n}\n\n&__address {\n  font-size: 1.5rem;\n  color: #737373;\n}\n\n&__description {\n  color: #737373;\n  margin: 0px;\n  padding: 0px;\n  font-size: 1.25rem;\n}\n\n&__close-wrapper {\n  all: unset;\n  position: absolute;\n  cursor: pointer;\n}\n\n&__close-icon {\n  width: 40px;\n  height: 40px;\n}\n}\n\n\n@media only screen {\n  .modal {\n    width: 90%;\n    height: auto;\n    flex-direction: column;\n    justify-content: space-around;\n    align-items: center;\n    padding: 15px;\n  }\n\n  .modal__image {\n    width: 100%;\n  }\n\n  .modal__info {\n    width: calc(100%);\n    height: 100%;\n    padding: 20px;\n    flex-direction: column;\n    align-items: center;\n  }\n\n  .modal__close-wrapper {\n    right: -20px;\n    top: -30px;\n  }\n\n  .modal__close-icon {\n    width: 35px;\n    height: 35px;\n    color: #cacaca;\n  }\n}\n\n@media only screen and (min-width: 1181px) {\n  .modal {\n    width: 80%;\n    height: 80%;\n    max-width: 1800px;\n    justify-content: space-between;\n    align-items: center;\n    flex-direction: row;\n    padding: 30px;\n  }\n\n  .modal__image {\n    width: calc(70% - 10px);\n    height: 100%;\n  }\n\n  .modal__info {\n    width: calc(30% - 10px);\n    height: 100%;\n    padding: 20px;\n    flex-direction: column;\n    align-items: flex-start;\n  }\n\n  .modal__close-wrapper {\n    right: 10px;\n    top: 10px;\n  }\n  .modal__description {\n    font-size: 18px;\n    color: #555;\n    text-align: center;\n    margin-top: 10px;\n  }\n\n  .modal__close-icon {\n    color: #737373;\n  }\n}\n\n.modal__image {\n  width: 100%;\n  max-width: 600px;\n  margin: 0 auto;\n}\n\n.modal__slide {\n  text-align: center;\n}\n\n.modal__slide-image {\n  max-width: 100%;\n  height: auto;\n  border-radius: 10px;\n}\n\n\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -2289,60 +2344,6 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 
 
        /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_2_use_2_node_modules_sass_loader_dist_cjs_js_navbar_scss__WEBPACK_IMPORTED_MODULE_6__["default"] && _node_modules_css_loader_dist_cjs_js_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_2_use_2_node_modules_sass_loader_dist_cjs_js_navbar_scss__WEBPACK_IMPORTED_MODULE_6__["default"].locals ? _node_modules_css_loader_dist_cjs_js_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_2_use_2_node_modules_sass_loader_dist_cjs_js_navbar_scss__WEBPACK_IMPORTED_MODULE_6__["default"].locals : undefined);
-
-
-/***/ }),
-
-/***/ "./src/components/Objects/Card/Feature.scss":
-/*!**************************************************!*\
-  !*** ./src/components/Objects/Card/Feature.scss ***!
-  \**************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
-/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !../../../../node_modules/style-loader/dist/runtime/styleDomAPI.js */ "./node_modules/style-loader/dist/runtime/styleDomAPI.js");
-/* harmony import */ var _node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../../node_modules/style-loader/dist/runtime/insertBySelector.js */ "./node_modules/style-loader/dist/runtime/insertBySelector.js");
-/* harmony import */ var _node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! !../../../../node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js */ "./node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js");
-/* harmony import */ var _node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! !../../../../node_modules/style-loader/dist/runtime/insertStyleElement.js */ "./node_modules/style-loader/dist/runtime/insertStyleElement.js");
-/* harmony import */ var _node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! !../../../../node_modules/style-loader/dist/runtime/styleTagTransform.js */ "./node_modules/style-loader/dist/runtime/styleTagTransform.js");
-/* harmony import */ var _node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _node_modules_css_loader_dist_cjs_js_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_2_use_2_node_modules_sass_loader_dist_cjs_js_Feature_scss__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! !!../../../../node_modules/css-loader/dist/cjs.js!../../../../node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!../../../../node_modules/sass-loader/dist/cjs.js!./Feature.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./node_modules/sass-loader/dist/cjs.js!./src/components/Objects/Card/Feature.scss");
-
-      
-      
-      
-      
-      
-      
-      
-      
-      
-
-var options = {};
-
-options.styleTagTransform = (_node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5___default());
-options.setAttributes = (_node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3___default());
-
-      options.insert = _node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2___default().bind(null, "head");
-    
-options.domAPI = (_node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1___default());
-options.insertStyleElement = (_node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4___default());
-
-var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_2_use_2_node_modules_sass_loader_dist_cjs_js_Feature_scss__WEBPACK_IMPORTED_MODULE_6__["default"], options);
-
-
-
-
-       /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_2_use_2_node_modules_sass_loader_dist_cjs_js_Feature_scss__WEBPACK_IMPORTED_MODULE_6__["default"] && _node_modules_css_loader_dist_cjs_js_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_2_use_2_node_modules_sass_loader_dist_cjs_js_Feature_scss__WEBPACK_IMPORTED_MODULE_6__["default"].locals ? _node_modules_css_loader_dist_cjs_js_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_2_use_2_node_modules_sass_loader_dist_cjs_js_Feature_scss__WEBPACK_IMPORTED_MODULE_6__["default"].locals : undefined);
 
 
 /***/ }),
@@ -3107,4 +3108,4 @@ module.exports = __webpack_require__.p + "assets/bbcc272d5bfe3d05485c.jpeg";
 /******/ 	
 /******/ })()
 ;
-//# sourceMappingURL=scripts.c1407feabb5b5f130e89.js.map
+//# sourceMappingURL=scripts.ebc88921cd112338ee66.js.map
