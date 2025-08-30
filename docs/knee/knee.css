@@ -1,0 +1,15 @@
+
+/* knee.css — mobile-first hero */
+.hero{ background:var(--c-bg); color:var(--c-white); padding:16px 16px 28px; }
+.hero__media{ border-radius:var(--radius); overflow:hidden; margin:8px 0 16px; background:linear-gradient(135deg,#0f8a96,#0a6670); height:220px; }
+@media (min-width:768px){ .hero__media{ height:340px; } }
+.hero__content{ max-width:900px; margin:0 auto }
+.hero__title{ margin:8px 0 12px; font-size:clamp(24px,6vw,36px); line-height:1.15; font-weight:800; color:var(--c-white);}
+.hero__subtitle{ margin:0 0 10px; color:var(--c-text); font-size:14px;}
+.hero__text{ margin:0 0 14px; font-size:16px; color:var(--c-white);}
+.hero__text .accent{ color:var(--c-accent); font-weight:700 }
+.hero__price{ margin:0 0 10px; font-size:16px; }
+.price-now{ color:var(--c-accent); font-weight:800 }
+.price-old{ opacity:.8; text-decoration:line-through; text-decoration-thickness:2px; }
+.hero__bonus{ margin:0 0 18px; font-size:15px; color:var(--c-text); }
+.hero .btn{ width:100%; max-width:360px; font-size:18px }
