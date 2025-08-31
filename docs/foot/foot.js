@@ -147,40 +147,31 @@
 })();
 
 /* ===== REVIEWS carousel ===== */
+// === Reviews carousel (простий) ===
 (function(){
-  const root = document.querySelector('[data-reviews]');
-  if(!root) return;
-  const track = root.querySelector('.bs-reviews__track');
-  const cards = Array.from(track.children);
-  const btnPrev = root.querySelector('.bs-reviews__nav--prev');
-  const btnNext = root.querySelector('.bs-reviews__nav--next');
+  const root = document.getElementById('rvCarousel');
+  if (!root) return;
+
+  const track = root.querySelector('.rv-track');
+  const slides = Array.from(root.querySelectorAll('.rv-slide'));
+  const prevBtn = root.querySelector('.rv-prev');
+  const nextBtn = root.querySelector('.rv-next');
 
   let index = 0;
-  let perView = 1;
 
-  function updatePerView(){
-    if(window.innerWidth >= 1024) perView = 3;
-    else if(window.innerWidth >= 768) perView = 2;
-    else perView = 1;
-  }
-  function update(){
-    const offset = -(index * (100/perView));
-    track.style.transform = `translateX(${offset}%)`;
-  }
-  function next(){
-    if(index < cards.length - perView){ index++; update(); }
-  }
-  function prev(){
-    if(index > 0){ index--; update(); }
+  function update() {
+    track.style.transform = `translateX(${-index * 100}%)`;
   }
 
-  btnNext.addEventListener('click', next);
-  btnPrev.addEventListener('click', prev);
-  window.addEventListener('resize', ()=>{ updatePerView(); update(); });
+  function next(){ index = (index + 1) % slides.length; update(); }
+  function prev(){ index = (index - 1 + slides.length) % slides.length; update(); }
 
-  updatePerView();
+  nextBtn.addEventListener('click', next);
+  prevBtn.addEventListener('click', prev);
+
   update();
 })();
+
 
 /* ==== SPOTS + PURCHASE TOAST (sync) ==== */
 (function () {

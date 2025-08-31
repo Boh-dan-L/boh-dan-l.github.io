@@ -18,7 +18,7 @@ body{
 img{max-width:100%;display:block;height:auto}
 .nowrap{white-space:nowrap}
 .site-header{
-  position:sticky; top:0; z-index:40; display:flex; align-items:center; justify-content:center;
+  position:sticky; top:0; z-index:40; display:none; align-items:center; justify-content:center;
   height:64px; background:#fff; border-bottom:1px solid #eee;
 }
 .site-header .logo{display:block; height:36px}
