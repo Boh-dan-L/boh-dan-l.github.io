@@ -23,7 +23,7 @@
     overflow:hidden;
     margin:8px 0 16px;
     background:linear-gradient(135deg,#0f8a96,#0a6670);
-    background-image: url(img/author-hero.png);
+    background-image: url(img/author-hero.webp);
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
@@ -252,14 +252,14 @@
 .bs-author__outro .accent{color: var(--c-orange);}
 
 @media (min-width:768px){
-  .bs-author__grid{ grid-template-columns:1fr 2fr; gap:28px; }
+  /* .bs-author__grid{ grid-template-columns:1fr 2fr; gap:28px; } */
   .bs-author__content{ font-size:16px; }
   .bs-author__list{ font-size:16px; }
   .bs-author__intro, .bs-author__outro{ font-size:16px; }
 }
 
 @media (min-width:1024px){
-  .bs-author__grid{ grid-template-columns:1fr 1.5fr; gap:40px; }
+  /* .bs-author__grid{ grid-template-columns:1fr 1.5fr; gap:40px; } */
   .bs-author__title{ font-size:32px; }
 }
 
@@ -520,4 +520,106 @@
   .timeline__row{grid-template-columns:42px 1fr}
   .timeline__summary{padding:16px 20px}
   .timeline__body{padding:18px 20px}
+}
+
+
+
+
+/* ---------- 2) Кнопки: до 480 — повна ширина, далі — по центру, авто ---------- */
+.btn{
+  min-height:48px;
+}
+@media (max-width:480px){
+  .btn{
+    width:100%;
+    display:block;
+  }
+}
+/* від 481px: центруємо і не розтягуємо */
+@media (min-width:481px){
+  .btn{
+    width:380px;
+    /* display:inline-flex; */
+  }}
+
+
+/* ---------- 4) FAQ: плюс/мінус замість «квадратиків» ---------- */
+/* Ховаємо попередню «квадратну» іконку */
+.bs-faq__chev{ display:none !important; }
+
+/* Малюємо плюсик псевдоелементами на самому тригері */
+.bs-faq__q{
+  position:relative;
+  padding-right:48px; /* місце під плюс/мінус */
+}
+.bs-faq__q::before,
+.bs-faq__q::after{
+  content:"";
+  position:absolute;
+  right:16px;
+  top:50%;
+  transform:translateY(-50%);
+  width:18px; height:2px;
+  background:#0A6670;
+  border-radius:2px;
+}
+/* вертикальна риска — утворює «+» */
+.bs-faq__q::after{
+  transform:translateY(-50%) rotate(90deg);
+}
+
+/* коли відкрито (твій JS ставить aria-expanded="true") — залишається «мінус» */
+.bs-faq__q[aria-expanded="true"]::after{ opacity:0; }
+
+/* трохи більше читабельності відповіді */
+.bs-faq__a-inner{
+  line-height:1.55;
+  font-size:15px;
+}
+@media (min-width:768px){
+  .bs-faq__a-inner{ font-size:16px; }
+}
+
+/* ---------- 5) Дрібні корекції сумісності ---------- */
+/* Щоб картинки ніколи не вилазили */
+img{ max-width:100%; height:auto; }
+/* На дуже вузьких екранах у Hero не даємо тексту злипатися з фото */
+@media (max-width:360px){
+  .hero__grid{ gap:12px; }
+}
+
+.thankyou {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-height:100vh;
+  background: linear-gradient(135deg, #0A6670, #0f8a96);
+  color:#fff;
+  text-align:center;
+  padding:20px;
+}
+.thankyou__box {
+  background:#fff;
+  color:#2c3e43;
+  border-radius:16px;
+  padding:32px 24px;
+  max-width:500px;
+  width:100%;
+  box-shadow:0 10px 25px rgba(0,0,0,.1);
+}
+.thankyou__title {
+  font-size:clamp(24px, 5vw, 36px);
+  margin-bottom:16px;
+  color:#0A6670;
+}
+.thankyou__text {
+  margin-bottom:24px;
+  font-size:16px;
+  line-height:1.5;
+}
+.thankyou .btn {
+  width:100%;
+}
+@media (min-width:481px){
+  .thankyou .btn { width:auto; padding:14px 32px; }
 }
