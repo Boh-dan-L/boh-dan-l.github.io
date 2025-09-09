@@ -33,9 +33,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </main>
   <footer class="footer">© Bogdan Rehab</footer>
 <script>
-  fbq('track', 'Purchase', {
-    value: 290.00,   // тут ваша ціна
-    currency: 'UAH'  // ваша валюта
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    event: 'purchase',
+    value: 290.00,
+    currency: 'UAH',
+    items: [{
+      id: 'foot-course',
+      name: 'Курс: Стопа',
+      quantity: 1,
+      price: 290.00
+    }]
   });
 </script>
 </body>
