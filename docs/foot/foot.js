@@ -28,7 +28,7 @@
     if (mode === 'duration'){
       // тривалість у мс (за замовч. 2 години)
       const key = el.getAttribute('data-key') || 'bs-countdown-duration';
-      const durationMs = +(el.getAttribute('data-duration-ms') || 7200000);
+      const durationMs = +(el.getAttribute('data-duration-ms') || 900000);
       let end = +localStorage.getItem(key);
       if (!end || Date.now() > end) {
         end = Date.now() + durationMs;
@@ -62,7 +62,7 @@
     if (diff <= 0){
       if (t.mode === 'duration'){
         const key = t.el._durationKey || 'bs-countdown-duration';
-        const ms = t.el._durationMs || 7200000;
+        const ms = t.el._durationMs || 900000;
         const newEnd = Date.now() + ms;
         localStorage.setItem(key, newEnd);
         t.end = new Date(newEnd);

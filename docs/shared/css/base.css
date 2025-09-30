@@ -1,14 +1,5 @@
 
-:root{
-  --c-bg: #0A6670;
-  --c-white: #ffffff;
-  --c-text: #D6EEF1;
-  --c-accent: #F0B429;
-  --c-orange: #FF7A00;
-  --c-orange-dark: #E66E00;
-  --radius: 14px;
-  --container: 1120px;
-}
+
 *{box-sizing:border-box}
 html,body{margin:0;padding:0}
 body{
@@ -41,6 +32,11 @@ img{max-width:100%;display:block;height:auto}
 .bs-countdown{
   display:inline-flex; align-items:stretch; gap:8px;
   background:#0a6670; color:#fff; padding:10px 12px; border-radius:12px;
+  font-feature-settings:"tnum" 1; /* моноцифри */
+}
+.bs-countdown-knee{
+  display:inline-flex; align-items:stretch; gap:8px;
+  color:#fff; padding:10px 12px; border-radius:12px;
   font-feature-settings:"tnum" 1; /* моноцифри */
 }
 .bs-countdown__item{

@@ -3,32 +3,918 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Курс для коліна — повернись до активного життя</title>
+  <title>Позбудься болю в стопі — всього 15 хв на день</title>
   <link rel="stylesheet" href="../shared/css/base.css">
   <link rel="stylesheet" href="./knee.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;800&display=swap" rel="stylesheet">
+
 </head>
 <body data-landing="knee">
 <header class="site-header">
   <button class="burger" aria-label="Відкрити меню"><span></span><span></span><span></span></button>
-  <a class="logo" href="#"><img src="../shared/img/logo-bogdan-rehab.svg" alt="Bogdan Rehab" /></a>
+  <a class="logo" href="#"><img src="../shared/img/logo.png" alt="Bogdan Rehab" /></a>
 </header>
 <main>
-  <section class="hero">
-    <div class="hero__media"></div>
-    <div class="hero__content">
-      <h1 class="hero__title">Курс для коліна — повернись до активного життя</h1>
-      <p class="hero__subtitle">Авторський курс від фізичного терапевта</p>
-      <p class="hero__text">
-        Полегшення болю вже з <span class="accent">першого тижня</span> вдома,
-        <span class="accent">без ліків</span> і <span class="accent">складних вправ</span>. Програма адаптується під твій стан.
+  <section class="hero hero--knee" id="hero">
+    <!-- Фото на фоні -->
+    <div class="hero-knee__bg"></div>
+    <div class="hero-knee__overlay"></div>
+
+    <div class="hero-knee__inner">
+      <p class="hero-knee__eyebrow">Авторський курс від фізичного терапевта з 10-річним досвідом</p>
+
+      <h1 class="hero-knee__title">
+        Позбудься <span class="accent">болю в коліні</span> та поверни свободу руху
+        всього за <span class="accent">15 хвилин на день</span>
+      </h1>
+
+      <ul class="hero-knee__bullets" role="list">
+        <li>Без ліків і дорогих процедур</li>
+        <li>Вправи вдома без тренажерів</li>
+        <li>Поетапне відновлення: від гострого болю до активності</li>
+      </ul>
+
+      <!-- Ціна -->
+      <p class="hero-knee__price">
+        Лише за <span class="price-now">390 грн</span>,
+        замість <span class="price-old">1899 грн</span>
       </p>
-      <p class="hero__price">Лише за <span class="price-now">290 грн</span>, замість <span class="price-old">1899 грн</span></p>
-      <p class="hero__bonus">🎁 Бонус відео про методи лікування, які реально працюють</p>
-      <a class="btn btn--primary" href="/knee/thank-you/">До курсу</a>
+        <div class="bs-countdown bs-countdown-knee" data-mode="duration" data-key="knee-2h" data-duration-ms="900000">
+          <div><span data-part="days">00</span> днів</div>
+          <div><span data-part="hours">00</span> год</div>
+          <div><span data-part="minutes">00</span> хв</div>
+          <div><span data-part="seconds">00</span> с</div>
+        </div>
+      <!-- CTA-група -->
+      <div class="hero-knee__cta">
+        <a  class="btn btn--primary hero-knee__cta-buy"
+          href="#pricing">
+          Розпочати курс
+        </a>
+
+        <a class="btn hero-knee__cta-test"
+          href="#knee-assess" data-scroll-to="knee-assess">
+          Пройти тест на стан коліна
+        </a>
+      </div>
+
+      <!-- Мікродовіра -->
+      <p class="hero-knee__proof">1200+ учасників уже повернулись до активного життя</p>
+
+      <!-- Таймер + «місця» -->
+      <div class="hero-knee__meta">
+
+        <p class="hero-knee__spots">Залишилось<span class="accent"> <strong data-spotss></strong> </span>місць за акцією</p>
+      </div>
     </div>
   </section>
+
+<!-- ============== WHO: Для кого курс ============== -->
+<section class="who who--alt" id="who">
+  <div class="who__inner">
+    <h2 class="who__title">Для кого цей курс</h2>
+    <p class="who__lead">Курс для тих, хто хоче безпечно зняти біль у коліні та повернутись до активності вдома — без ліків і дорогих процедур.</p>
+
+    <div class="who__grid">
+      <!-- Приклад картки -->
+      <article class="who__card">
+        <div class="who__media">
+          <img src="./img/surg.jpg" alt="Після операцій та травм">
+        </div>
+        <div class="who__body">
+          <h3 class="who__h">Після операцій та травм</h3>
+          <p class="who__p">Курс для тих, хто хоче безпечно зняти біль у коліні та повернутись до активності вдома — без ліків і дорогих процедур.</p>
+        </div>
+      </article>
+
+      <article class="who__card">
+        <div class="who__media">
+          <img src="./img/hronic.jpg" alt="Хронічні болі">
+        </div>
+        <div class="who__body">
+          <h3 class="who__h">Хронічні болі</h3>
+          <p class="who__p">Артроз, пателофеморальний синдром, «коліно бігуна» та інші стани.</p>
+        </div>
+      </article>
+
+      <article class="who__card">
+        <div class="who__media">
+          <img src="./img/sport.jpg" alt="Активні люди">
+        </div>
+        <div class="who__body">
+          <h3 class="who__h">Активні люди</h3>
+          <p class="who__p">Для тих, хто хоче повернутись до бігу, спорту чи активного життя без болю.</p>
+        </div>
+      </article>
+
+      <article class="who__card">
+        <div class="who__media">
+          <img src="./img/stairs.jpg" alt="Щоденний дискомфорт">
+        </div>
+        <div class="who__body">
+          <h3 class="who__h">Щоденний дискомфорт</h3>
+          <p class="who__p">Якщо коліно болить навіть при ходьбі чи сходах — курс допоможе відновити функцію.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+<!-- ============== /WHO ============== -->
+
+  <!-- ============== WHY: Чому традиційне лікування не працює ============== -->
+  <section class="why" id="why">
+    <div class="why__inner">
+      <h2 class="why__title">Чому традиційне лікування не працює</h2>
+      <p class="why__lead">
+        Біль можна «погасити», але без відновлення <strong>функції коліна</strong> симптоми повертаються при кожному навантаженні.
+      </p>
+
+      <div class="why__grid">
+        <article class="why__card">
+          <h3 class="why__h">Таблетки та уколи</h3>
+          <p class="why__p">Знімають запалення й біль, але <strong>не відновлюють силу, контроль і біомеханіку</strong>.</p>
+        </article>
+
+        <article class="why__card">
+          <h3 class="why__h">Пасивні процедури</h3>
+          <p class="why__p">Масаж/апарати дають полегшення «тут і зараз», та <strong>не формують адаптації тканин</strong>.</p>
+        </article>
+
+        <article class="why__card">
+          <h3 class="why__h">Загальна ЛФК без системи</h3>
+          <p class="why__p">Вправи «для всіх» без тестів і прогресії → <strong>нестійкий результат</strong>.</p>
+        </article>
+
+        <article class="why__card">
+          <h3 class="why__h">Лише спокій і бинт</h3>
+          <p class="why__p">Симптоми стихають, але без <strong>активного відновлення</strong> повертаються біль і нестабільність.</p>
+        </article>
+
+        <article class="why__card">
+          <h3 class="why__h">Ігнорування типу травми</h3>
+          <p class="why__p">Менiск, зв’язки, ПФБ — <strong>різні протоколи</strong>. Одна «пігулка» не працює для всіх.</p>
+        </article>
+      </div>
+
+      <div class="why__works">
+        <h3 class="why__subtitle">Що працює насправді</h3>
+        <ul class="why__list" role="list">
+          <li><strong>Поетапний протокол:</strong> гострий → функціональний.</li>
+          <li><strong>Тести-перемикачі</strong> між етапами для безпеки та своєчасності.</li>
+          <li><strong>Прогресія навантаження</strong>: сила, баланс, контроль ходи/бігу.</li>
+          <li><strong>Самомасаж і специфічні техніки</strong> після операції/травм.</li>
+          <li><strong>Домашній формат</strong> без дорогих тренажерів + нагадування.</li>
+        </ul>
+
+        <div class="why__cta">
+          <a class="btn btn--primary" href="#knee-assess" data-scroll-to="knee-assess">Пройти короткий тест</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ============== /WHY ============== -->
+
+    <!-- ============== PROGRAM: Структура курсу ============== -->
+  <section class="program" id="knee-program" aria-labelledby="program-title">
+    <div class="program__inner">
+      <h2 class="program__title" id="program-title">Структура курсу: від гострого болю до активності</h2>
+      <p class="program__lead">
+        Поетапний протокол з тестами безпеки. Вправи вдома, без тренажерів. Підтримка нагадуваннями та PDF-планами.
+      </p>
+
+      <!-- Лінійка: Етап 1 → Тест → Етап 2 -->
+      <ol class="program__timeline">
+        <!-- Етап 1 -->
+        <li class="program__step">
+          <div class="program__rail" aria-hidden="true"></div>
+          <article class="program__card">
+            <div class="program__badge">Етап 1 • Гострий</div>
+            <h3 class="program__h">Зняття болю/набряку, відновлення рухів</h3>
+            <ul class="program__list" role="list">
+              <li>Ізометрії квадрицепса і сідниць, м’яка мобілізація</li>
+              <li>Лімфодренаж, самомасаж, хода у безболісному діапазоні</li>
+              <li>Мета: менше болю, краща опора та контроль</li>
+            </ul>
+          </article>
+        </li>
+
+        <!-- Тест-перемикач -->
+        <li class="program__step program__step--gate" aria-label="Тест-перемикач">
+          <div class="program__rail" aria-hidden="true"></div>
+          <article class="program__card program__card--gate">
+            <div class="program__badge program__badge--gate">Тест-перемикач</div>
+            <h3 class="program__h">Готовність перейти до Етапу 2</h3>
+            <ul class="program__list" role="list">
+              <li>Біль у спокої ≤ <strong>3/10</strong>, немає гострого набряку/«заклинювань»</li>
+              <li>Сходи/присід — <strong>контрольовані</strong>, без «провалів»</li>
+              <li>Не пройшов? Ще 3–5 днів Етапу 1 з корекцією навантаження</li>
+            </ul>
+            <div class="program__actions">
+              <a class="btn btn--primary" href="#knee-assess" data-scroll-to="knee-assess">Пройти короткий тест</a>
+            </div>
+          </article>
+        </li>
+
+        <!-- Етап 2 -->
+        <li class="program__step">
+          <div class="program__rail" aria-hidden="true"></div>
+          <article class="program__card">
+            <div class="program__badge">Етап 2 • Функціональний</div>
+            <h3 class="program__h">Сила, баланс, контроль ходи/бігу</h3>
+            <ul class="program__list" role="list">
+              <li>Прогресивні присідання/випади, робота на баланс</li>
+              <li>Ексцентричні вправи, підготовка до бігу</li>
+              <li>Мета: повернення до спорту/активностей без болю</li>
+            </ul>
+          </article>
+        </li>
+      </ol>
+
+      <!-- Бонуси -->
+      <div class="program__bonuses">
+        <h3 class="program__subtitle">6 бонусних відео (найпопулярніші запити)</h3>
+        <div class="program__bonus-grid">
+          <article class="program__bonus">
+            <h4 class="program__bh">Артроз</h4>
+            <p class="program__bp">Безпечна прогресія, як уникати загострень.</p>
+          </article>
+          <article class="program__bonus">
+            <h4 class="program__bh">Менiск</h4>
+            <p class="program__bp">Коли і як додавати навантаження.</p>
+          </article>
+          <article class="program__bonus">
+            <h4 class="program__bh">ПФБ («коліно бігуна»)</h4>
+            <p class="program__bp">Трекінг чашечки, сила сідниць/квадрицепса.</p>
+          </article>
+          <article class="program__bonus">
+            <h4 class="program__bh">«Коліно стрибуна»</h4>
+            <p class="program__bp">Ексцентрика та пліометрія без ризику.</p>
+          </article>
+          <article class="program__bonus">
+            <h4 class="program__bh">Після ACL/зв’язок</h4>
+            <p class="program__bp">Етапи стабілізації та контроль навантажень.</p>
+          </article>
+          <article class="program__bonus">
+            <h4 class="program__bh">Рубці після операції</h4>
+            <p class="program__bp">Техніка масажу та чого не робити.</p>
+          </article>
+        </div>
+      </div>
+
+      <!-- Нагадування -->
+      <div class="program__remind">
+        <div class="program__remind-card">
+          <div class="program__remind-icon" aria-hidden="true">⏰</div>
+          <div class="program__remind-body">
+            <h3 class="program__rh">Нагадування та PDF-плани</h3>
+            <p class="program__rp">Отримуй щоденні нагадування в календарі й PDF-плани на телефон, щоб не пропускати тренування навіть офлайн.</p>
+          </div>
+          <div class="program__remind-actions">
+            <a class="btn btn--primary" href="#knee-assess" data-scroll-to="knee-assess">Визначити свій старт</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ============== /PROGRAM ============== -->
+
+<!-- ============== INCLUDED: Що входить у курс ============== -->
+<section class="included included--alt" id="included">
+  <div class="included__inner">
+    <h2 class="included__title">Що входить у курс</h2>
+    <p class="included__lead">Усе, що потрібно для безпечного і послідовного відновлення коліна вдома.</p>
+
+    <div class="included__grid">
+      <!-- 70+ вправ -->
+      <article class="included__card">
+        <div class="included__media">
+          <img src="./img/ex.jpg" alt="Вправи у відеоформаті">
+        </div>
+        <div class="included__body">
+          <h3 class="included__h">70+ відео-вправ</h3>
+          <p class="included__p">Короткі, зрозумілі ролики з технікою та прогресією.</p>
+        </div>
+      </article>
+
+      <!-- 6 бонусних -->
+      <article class="included__card">
+        <div class="included__media">
+          <img src="./img/diag.jpg" alt="Бонусні відео">
+        </div>
+        <div class="included__body">
+          <h3 class="included__h">6 бонусних відео</h3>
+          <p class="included__p">Артроз, меніск, ПФБ, «коліно стрибуна», зв’язки, рубці після операцій.</p>
+        </div>
+      </article>
+
+      <!-- PDF -->
+      <article class="included__card">
+        <div class="included__media">
+          <img src="./img/pdf.jpg" alt="PDF-файли для офлайн-доступу">
+        </div>
+        <div class="included__body">
+          <h3 class="included__h">PDF-файли</h3>
+          <p class="included__p">Готові плани вправ для офлайн-доступу на телефоні.</p>
+        </div>
+      </article>
+
+      <!-- Нагадування -->
+      <article class="included__card">
+        <div class="included__media">
+          <img src="./img/calendar.jpg" alt="Нагадування в календарі">
+        </div>
+        <div class="included__body">
+          <h3 class="included__h">Нагадування в календарі</h3>
+          <p class="included__p">Щоденні підказки, щоб не пропускати тренування.</p>
+        </div>
+      </article>
+
+      <!-- Самомасаж -->
+      <article class="included__card">
+        <div class="included__media">
+          <img src="./img/mass.jpg" alt="Самомасаж і техніки">
+        </div>
+        <div class="included__body">
+          <h3 class="included__h">Самомасаж і техніки</h3>
+          <p class="included__p">Зокрема масаж рубців після операції та безпечні методики.</p>
+        </div>
+      </article>
+
+            <!-- Самомасаж -->
+      <article class="included__card">
+        <div class="included__media">
+          <img src="./img/teleg.jpg" alt="Самомасаж і техніки">
+        </div>
+        <div class="included__body">
+          <h3 class="included__h">Tелеграм бот</h3>
+          <p class="included__p">Зокрема масаж рубців після операції та безпечні методики.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+<!-- ============== /INCLUDED ============== -->
+
+    <section class="section bs-assess section--dark" id="knee-assess">
+    <div class="container">
+      <h2 class="section__title section__title--light">Не знаєш, з якого етапу почати?</h2>
+      <p class="assess__lead">Пройди короткий тест (60 сек) — підкажемо оптимальний старт і покажемо релевантні бонус-відео.</p>
+
+      <!-- Прогрес -->
+      <div class="assess__progress" aria-hidden="true">
+        <div class="assess__bar"><span class="assess__bar-fill" data-assess-progress style="width:0%"></span></div>
+        <div class="assess__steps"><span data-assess-step>Крок 1 із 4</span></div>
+      </div>
+
+      <form class="assess" data-assess>
+        <!-- STEP 1: Red flags -->
+        <fieldset class="assess__step is-active" data-step="1">
+          <legend class="assess__h">Спершу — безпека</legend>
+          <div class="assess__q">
+            <label class="assess__label">Є значний набряк / почервоніння / підвищена температура тіла останні 24–48 год?</label>
+            <div class="assess__radios">
+              <label><input type="radio" name="rf_swelling" value="yes" required> Так</label>
+              <label><input type="radio" name="rf_swelling" value="no"> Ні</label>
+            </div>
+          </div>
+          <div class="assess__q">
+            <label class="assess__label">Коліно не повністю розгинається/згинається або “заклинює”?</label>
+            <div class="assess__radios">
+              <label><input type="radio" name="rf_locking" value="yes" required> Так</label>
+              <label><input type="radio" name="rf_locking" value="no"> Ні</label>
+            </div>
+          </div>
+          <div class="assess__q">
+            <label class="assess__label">Була недавня травма (до 2 тижнів) з різким болем/“клацом” і відчуттям нестабільності?</label>
+            <div class="assess__radios">
+              <label><input type="radio" name="rf_acute" value="yes" required> Так</label>
+              <label><input type="radio" name="rf_acute" value="no"> Ні</label>
+            </div>
+          </div>
+          <div class="assess__nav">
+            <button type="button" class="btn btn--primary" data-next>Далі</button>
+          </div>
+        </fieldset>
+
+        <!-- STEP 2: Симптоми зараз -->
+        <fieldset class="assess__step" data-step="2">
+          <legend class="assess__h">Оціни біль зараз</legend>
+          <div class="assess__q">
+            <label class="assess__label">Біль у спокої (0 — немає, 10 — максимум)</label>
+            <input type="range" name="pain_rest" min="0" max="10" value="2" step="1" data-range>
+            <div class="assess__range-val"><span data-out="pain_rest">2</span>/10</div>
+          </div>
+          <div class="assess__q">
+            <label class="assess__label">Біль при сходах / вставанні (0–10)</label>
+            <input type="range" name="pain_load" min="0" max="10" value="4" step="1" data-range>
+            <div class="assess__range-val"><span data-out="pain_load">4</span>/10</div>
+          </div>
+          <div class="assess__nav">
+            <button type="button" class="btn" data-prev>Назад</button>
+            <button type="button" class="btn btn--primary" data-next>Далі</button>
+          </div>
+        </fieldset>
+
+        <!-- STEP 3: Ознаки подразнення/нестабільності -->
+        <fieldset class="assess__step" data-step="3">
+          <legend class="assess__h">Додаткові ознаки</legend>
+          <div class="assess__q">
+            <label class="assess__label">Набряк за останні 48 год</label>
+            <div class="assess__radios">
+              <label><input type="radio" name="swelling48" value="yes" required> Так</label>
+              <label><input type="radio" name="swelling48" value="no"> Ні</label>
+            </div>
+          </div>
+          <div class="assess__q">
+            <label class="assess__label">Відчуття “провалювання/нестабільності”</label>
+            <div class="assess__radios">
+              <label><input type="radio" name="instability" value="yes" required> Так</label>
+              <label><input type="radio" name="instability" value="no"> Ні</label>
+            </div>
+          </div>
+          <div class="assess__nav">
+            <button type="button" class="btn" data-prev>Назад</button>
+            <button type="button" class="btn btn--primary" data-next>Далі</button>
+          </div>
+        </fieldset>
+
+        <!-- STEP 4: Біль під час активностей (KOOS-lite) -->
+        <fieldset class="assess__step" data-step="4">
+          <legend class="assess__h">Біль/дискомфорт при діях за останній тиждень</legend>
+
+          <div class="assess__q">
+            <label class="assess__label">Ходьба по рівній поверхні викликає біль?</label>
+            <div class="assess__radios">
+              <label><input type="radio" name="walk_pain" value="yes" required> Так</label>
+              <label><input type="radio" name="walk_pain" value="no"> Ні</label>
+            </div>
+          </div>
+
+          <div class="assess__q">
+            <label class="assess__label">Підіймання/спуск по сходах викликає біль?</label>
+            <div class="assess__radios">
+              <label><input type="radio" name="stairs_pain" value="yes" required> Так</label>
+              <label><input type="radio" name="stairs_pain" value="no"> Ні</label>
+            </div>
+          </div>
+
+          <div class="assess__q">
+            <label class="assess__label">Присідання або підйом зі стільця болючі?</label>
+            <div class="assess__radios">
+              <label><input type="radio" name="squat_pain" value="yes" required> Так</label>
+              <label><input type="radio" name="squat_pain" value="no"> Ні</label>
+            </div>
+          </div>
+
+          <div class="assess__q">
+            <label class="assess__label">Стояння >10 хв або опора на коліно (на колінах) болючі?</label>
+            <div class="assess__radios">
+              <label><input type="radio" name="kneel_pain" value="yes" required> Так</label>
+              <label><input type="radio" name="kneel_pain" value="no"> Ні</label>
+            </div>
+          </div>
+
+          <div class="assess__q">
+            <label class="assess__label">Є нічний біль у коліні?</label>
+            <div class="assess__radios">
+              <label><input type="radio" name="night_pain" value="yes" required> Так</label>
+              <label><input type="radio" name="night_pain" value="no"> Ні</label>
+            </div>
+          </div>
+
+          <div class="assess__q">
+            <label class="assess__label">Є виражена ранкова скутость ( >15 хв )?</label>
+            <div class="assess__radios">
+              <label><input type="radio" name="morning_stiff" value="yes" required> Так</label>
+              <label><input type="radio" name="morning_stiff" value="no"> Ні</label>
+            </div>
+          </div>
+
+          <div class="assess__nav">
+            <button type="button" class="btn" data-prev>Назад</button>
+            <button type="submit" class="btn btn--primary">Дивитись результат</button>
+          </div>
+        </fieldset>
+
+              <!-- РЕЗУЛЬТАТ -->
+      <div class="assess__result" data-assess-result hidden></div>
+    </div>
+  </section>
+
+
+  <section class="bs-author section section--alt section--angled-top">
+    <div class="container bs-author__grid">
+      <div class="bs-author__content">
+        <h2 class="bs-author__title">Про автора курсу</h2>
+        <div class="bs-author__media">
+        <img src="./img/avatar.jpg" alt="Богдан — фізичний терапевт" class="bs-author__img">
+        </div>
+        <p class="bs-author__intro">
+          Привіт! Мене звати <strong>Богдан</strong>. Я фізичний терапевт з понад 10-річним досвідом роботи з травмами коліна, стопи та хребта.
+        </p>
+        <ul class="bs-author__list">
+          <li>Понад <span class="accent">2000 пацієнтів</span> уже пройшли мої індивідуальні та онлайн-програми.</li>
+          <li>Навчався за міжнародними методиками: Maliggan concept, Maitland, PNF, McKenzie, Thomas Myers (анатомічні поїзди), мануальна терапія.</li>
+          <li>Постійно підвищую кваліфікацію, відвідую конференції та навчаюся у провідних спеціалістів.</li>
+          <li>Поєдную знання анатомії, біомеханіки та доказових підходів для створення ефективних програм, які реально працюють.</li>
+          <li>Маю унікальний досвід: починав із масажу, а сьогодні — автор власних курсів та реабілітаційних протоколів.</li>
+        </ul>
+        <p class="bs-author__outro">
+          Я створив цей курс, щоб кожен зміг <span class="accent">безпечно та ефективно</span> покращити стан стопи, навіть без візиту до клініки. <span class="accent">Моя мета</span> — зробити знання та допомогу доступними для кожного.
+        </p>
+      </div>
+    </div>
+  </section>
+  <section class="reviews section">
+    <div class="container">
+      <h2 class="section__title">Відгуки учасників</h2>
+
+      <div class="rv-carousel" id="rvCarousel" aria-roledescription="carousel">
+        <button class="rv-nav rv-prev" aria-label="Попередній слайд">‹</button>
+
+        <div class="rv-viewport">
+          <ul class="rv-track">
+            <li class="rv-slide">
+              <img src="./img/1.jpg" alt="Відгук 1" loading="lazy">
+            </li>
+            <li class="rv-slide">
+              <img src="./img/2.jpg" alt="Відгук 2" loading="lazy">
+            </li>
+            <li class="rv-slide">
+              <img src="./img/3.jpg" alt="Відгук 3" loading="lazy">
+            </li>
+            <li class="rv-slide">
+              <img src="./img/4.jpg" alt="Відгук 3" loading="lazy">
+            </li>
+          </ul>
+        </div>
+
+        <button class="rv-nav rv-next" aria-label="Наступний слайд">›</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== PRICING: Обери свій формат ============== -->
+  <section class="pricing" id="pricing">
+    <div class="pricing__inner">
+      <h2 class="pricing__title">Обери свій формат</h2>
+      <p class="pricing__lead">Почни сьогодні. Є 14-денна гарантія повернення, доступ — назавжди.</p>
+
+      <div class="pricing__grid">
+        <!-- Базовий пакет -->
+        <article class="pricing__card">
+          <header class="pricing__head">
+            <h3 class="pricing__name">Курс «Реабілітація коліна»</h3>
+          </header>
+
+          <div class="pricing__price">
+            <span class="pricing__amount accent">390</span>
+            <span class="pricing__currency accent">грн</span>
+            <span class="pricing__old">1899 грн</span>
+          </div>
+
+          <ul class="pricing__list" role="list">
+            <li>70+ відео-вправ, 2 етапи (гострий → функціональний)</li>
+            <li>Тести між етапами</li>
+            <li>6 бонусних відео по найчастіших травмах</li>
+            <li>PDF-плани для офлайн-доступу</li>
+            <li>Нагадування в календарі</li>
+            <li>Довічний доступ</li>
+          </ul>
+          <!-- Таймер -->
+          <div class="bs-countdown-color bs-countdown" data-mode="duration" data-key="foot-2h" data-duration-ms="900000" aria-label="До кінця акції залишилось">
+            <div class="bs-countdown__item">
+            <span class="bs-countdown__num" data-part="days">00</span>
+            <span class="bs-countdown__label">днів</span>
+            </div>
+            <div class="bs-countdown__sep">:</div>
+            <div class="bs-countdown__item"><span class="bs-countdown__num" data-part="hours">00</span><span class="bs-countdown__label">год</span></div>
+            <div class="bs-countdown__sep">:</div>
+            <div class="bs-countdown__item"><span class="bs-countdown__num" data-part="minutes">00</span><span class="bs-countdown__label">хв</span></div>
+            <div class="bs-countdown__sep">:</div>
+            <div class="bs-countdown__item"><span class="bs-countdown__num" data-part="seconds">00</span><span class="bs-countdown__label">с</span></div>
+          </div>
+          <div class="hero-knee__meta">
+            <p class="bs-pricing__subtitle">Залишилось<span class="accent"> <strong data-spotss></strong> </span>місць за акцією</p>
+          </div>
+          <div class="pricing__actions">
+            <a id="main-cta" class="btn btn--primary pricing__btn"
+              href="https://secure.wayforpay.com/button/b580b218acc2f">
+              Придбати курс
+            </a>
+            <a class="pricing__sub" href="#knee-assess" data-scroll-to="knee-assess">Пройти короткий тест</a>
+          </div>
+        </article>
+
+        <!-- Розширений пакет -->
+        <article class="pricing__card pricing__card--pro" aria-label="Найкраща цінність">
+          <div class="pricing__badge">Найкраща цінність</div>
+
+          <header class="pricing__head">
+            <h3 class="pricing__name">Курс + індивідуальний розбір</h3>
+          </header>
+
+          <div class="pricing__price">
+            <span class="pricing__amount accent">890</span>
+            <span class="pricing__currency accent">грн</span>
+            <span class="pricing__old">2899 грн</span>
+          </div>
+
+          <ul class="pricing__list" role="list">
+            <li>Усе з базового пакета</li>
+            <li>Експрес-анкета й збір історії хвороби</li>
+            <li>Перегляд знімків та медичних виписок</li>
+            <li>Додаткові функціональні тести</li>
+            <li>Персональні акценти та тактика відновлення</li>
+            <li>Контроль через 2 тижні</li>
+          </ul>
+
+          <!-- Таймер -->
+          <div class="bs-countdown " data-mode="duration" data-key="foot-2h" data-duration-ms="900000" aria-label="До кінця акції залишилось">
+            <div class="bs-countdown__item">
+            <span class="bs-countdown__num" data-part="days">00</span>
+            <span class="bs-countdown__label">днів</span>
+            </div>
+            <div class="bs-countdown__sep">:</div>
+            <div class="bs-countdown__item"><span class="bs-countdown__num" data-part="hours">00</span><span class="bs-countdown__label">год</span></div>
+            <div class="bs-countdown__sep">:</div>
+            <div class="bs-countdown__item"><span class="bs-countdown__num" data-part="minutes">00</span><span class="bs-countdown__label">хв</span></div>
+            <div class="bs-countdown__sep">:</div>
+            <div class="bs-countdown__item"><span class="bs-countdown__num" data-part="seconds">00</span><span class="bs-countdown__label">с</span></div>
+          </div>
+
+          <div class="pricing__actions">
+            <a id="main-cta" class="btn btn--primary pricing__btn"
+              href="https://secure.wayforpay.com/button/bfef9d3512597">
+              Взяти курс + розбір
+            </a>
+            <p class="pricing__note">* Кількість розборів обмежена</p>
+          </div>
+        </article>
+      </div>
+
+    </div>
+  </section>
+  <!-- ============== /PRICING ============== -->
+
+
+  <section class="bs-faq section section--dark" id="faq">
+    <div class="container">
+      <h2 class="bs-faq__title bs-faq__title--light">Поширені запитання</h2>
+
+      <div class="bs-faq__list" data-faq>
+        <!-- 1 -->
+        <div class="bs-faq__item">
+          <button class="bs-faq__q" type="button" aria-expanded="false" aria-controls="faq-a1" id="faq-q1">
+            Коли я відчую перші результати?
+            <span class="bs-faq__chev" aria-hidden="true"></span>
+          </button>
+          <div class="bs-faq__a" id="faq-a1" role="region" aria-labelledby="faq-q1">
+            <div class="bs-faq__a-inner">
+              У більшості — вже <strong>на першому тижні</strong>: спадає набряк і зменшується біль завдяки правильному дозуванню навантаження.
+            </div>
+          </div>
+        </div>
+
+        <!-- 2 -->
+        <div class="bs-faq__item">
+          <button class="bs-faq__q" type="button" aria-expanded="false" aria-controls="faq-a2" id="faq-q2">
+            Скільки часу займають тренування?
+            <span class="bs-faq__chev" aria-hidden="true"></span>
+          </button>
+          <div class="bs-faq__a" id="faq-a2" role="region" aria-labelledby="faq-q2">
+            <div class="bs-faq__a-inner">
+              В середньому <strong>15 хвилин на день</strong>. Можна займатись у зручний час вдома, без тренажерів.
+            </div>
+          </div>
+        </div>
+
+        <!-- 3 -->
+        <div class="bs-faq__item">
+          <button class="bs-faq__q" type="button" aria-expanded="false" aria-controls="faq-a3" id="faq-q3">
+            Чи підійде, якщо біль у коліні триває давно?
+            <span class="bs-faq__chev" aria-hidden="true"></span>
+          </button>
+          <div class="bs-faq__a" id="faq-a3" role="region" aria-labelledby="faq-q3">
+            <div class="bs-faq__a-inner">
+              Так. Курс має <strong>2 етапи</strong> (гострий → функціональний) та <strong>тести-перемикачі</strong>, щоб рухатись безпечно і своєчасно.
+            </div>
+          </div>
+        </div>
+
+        <!-- 4 -->
+        <div class="bs-faq__item">
+          <button class="bs-faq__q" type="button" aria-expanded="false" aria-controls="faq-a4" id="faq-q4">
+            А якщо я не знаю точний діагноз?
+            <span class="bs-faq__chev" aria-hidden="true"></span>
+          </button>
+          <div class="bs-faq__a" id="faq-a4" role="region" aria-labelledby="faq-q4">
+            <div class="bs-faq__a-inner">
+              Можна починати. Вправи підходять при більшості причин болю в коліні: <strong>меніск, ПФБ («коліно бігуна»), артроз, тендинопатія, наслідки травм</strong>. Для старту пройди <strong>короткий тест</strong> на сайті.
+            </div>
+          </div>
+        </div>
+
+        <!-- 5 -->
+        <div class="bs-faq__item">
+          <button class="bs-faq__q" type="button" aria-expanded="false" aria-controls="faq-a5" id="faq-q5">
+            Чи не зроблю я собі гірше?
+            <span class="bs-faq__chev" aria-hidden="true"></span>
+          </button>
+          <div class="bs-faq__a" id="faq-a5" role="region" aria-labelledby="faq-q5">
+            <div class="bs-faq__a-inner">
+              Ні. Програма <strong>поступово</strong> підвищує навантаження, без різких та травмонебезпечних рухів. <strong>Тести</strong> підкажуть, коли переходити на наступний етап.
+            </div>
+          </div>
+        </div>
+
+        <!-- 6 -->
+        <div class="bs-faq__item">
+          <button class="bs-faq__q" type="button" aria-expanded="false" aria-controls="faq-a6" id="faq-q6">
+            Чи треба йти до лікаря перед стартом?
+            <span class="bs-faq__chev" aria-hidden="true"></span>
+          </button>
+          <div class="bs-faq__a" id="faq-a6" role="region" aria-labelledby="faq-q6">
+            <div class="bs-faq__a-inner">
+              Якщо немає <strong>гострої травми, вираженого набряку або «заклинювань»</strong> — можна починати. Якщо сумніваєшся — пройди тест або напиши в бот для швидкого розбору.
+            </div>
+          </div>
+        </div>
+
+        <!-- 7 -->
+        <div class="bs-faq__item">
+          <button class="bs-faq__q" type="button" aria-expanded="false" aria-controls="faq-a7" id="faq-q7">
+            Я новачок і давно не тренувався(лась). Підійде?
+            <span class="bs-faq__chev" aria-hidden="true"></span>
+          </button>
+          <div class="bs-faq__a" id="faq-a7" role="region" aria-labelledby="faq-q7">
+            <div class="bs-faq__a-inner">
+              Так. Курс розрахований навіть на повних початківців: старт з <strong>ізометрій</strong> і м’якої мобілізації, далі — проста прогресія.
+            </div>
+          </div>
+        </div>
+
+        <!-- 8 -->
+        <div class="bs-faq__item">
+          <button class="bs-faq__q" type="button" aria-expanded="false" aria-controls="faq-a8" id="faq-q8">
+            Якщо я цілий день на ногах / на роботі?
+            <span class="bs-faq__chev" aria-hidden="true"></span>
+          </button>
+          <div class="bs-faq__a" id="faq-a8" role="region" aria-labelledby="faq-q8">
+            <div class="bs-faq__a-inner">
+              Саме для цього і є курс: вправи допомагають зняти <strong>перевантаження</strong>, відновити <strong>ходу та баланс</strong>, а <strong>нагадування</strong> не дадуть випасти з ритму.
+            </div>
+          </div>
+        </div>
+
+        <!-- 9 -->
+        <div class="bs-faq__item">
+          <button class="bs-faq__q" type="button" aria-expanded="false" aria-controls="faq-a9" id="faq-q9">
+            А якщо пропущу день або тиждень?
+            <span class="bs-faq__chev" aria-hidden="true"></span>
+          </button>
+          <div class="bs-faq__a" id="faq-a9" role="region" aria-labelledby="faq-q9">
+            <div class="bs-faq__a-inner">
+              Нормально — просто повернись. Є <strong>PDF-плани</strong> та <strong>нагадування</strong>, щоб тримати темп у будь-якому графіку.
+            </div>
+          </div>
+        </div>
+
+        <!-- 10 -->
+        <div class="bs-faq__item">
+          <button class="bs-faq__q" type="button" aria-expanded="false" aria-controls="faq-a10" id="faq-q10">
+            Я хвилююсь, що не зрозумію техніку
+            <span class="bs-faq__chev" aria-hidden="true"></span>
+          </button>
+          <div class="bs-faq__a" id="faq-a10" role="region" aria-labelledby="faq-q10">
+            <div class="bs-faq__a-inner">
+              Кожна вправа — це <strong>коротке відео з поясненням</strong>. Додатково є <strong>бонуси</strong> по найчастіших станах і можливість <strong>швидкого розбору</strong> в боті.
+            </div>
+          </div>
+        </div>
+
+        <!-- 11 -->
+        <div class="bs-faq__item">
+          <button class="bs-faq__q" type="button" aria-expanded="false" aria-controls="faq-a11" id="faq-q11">
+            Що буде після оплати?
+            <span class="bs-faq__chev" aria-hidden="true"></span>
+          </button>
+          <div class="bs-faq__a" id="faq-a11" role="region" aria-labelledby="faq-q11">
+            <div class="bs-faq__a-inner">
+              Тебе автоматично додасть у <strong>чат-бот</strong>: вступне відео, тести (за бажанням), далі — тренування та нагадування згідно з етапом.
+            </div>
+          </div>
+        </div>
+
+        <!-- 12 -->
+        <div class="bs-faq__item">
+          <button class="bs-faq__q" type="button" aria-expanded="false" aria-controls="faq-a12" id="faq-q12">
+            Чи залишиться доступ до курсу?
+            <span class="bs-faq__chev" aria-hidden="true"></span>
+          </button>
+          <div class="bs-faq__a" id="faq-a12" role="region" aria-labelledby="faq-q12">
+            <div class="bs-faq__a-inner">
+              Так, <strong>довічний доступ</strong>. Можеш повертатись до будь-якого модуля та бонусів у будь-який час.
+            </div>
+          </div>
+        </div>
+
+        <!-- 13 -->
+        <div class="bs-faq__item">
+          <button class="bs-faq__q" type="button" aria-expanded="false" aria-controls="faq-a13" id="faq-q13">
+            А якщо курс не підійде?
+            <span class="bs-faq__chev" aria-hidden="true"></span>
+          </button>
+          <div class="bs-faq__a" id="faq-a13" role="region" aria-labelledby="faq-q13">
+            <div class="bs-faq__a-inner">
+              Протягом <strong>14 днів</strong> діє гарантія повернення коштів. Пишеш — і я повертаю оплату, без зайвих питань.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== GUARANTEE ============== -->
+  <section class="guarantee" id="guarantee">
+    <div class="guarantee__inner">
+      <div class="guarantee__card">
+        <div class="guarantee__icon" aria-hidden="true">✅</div>
+        <h2 class="guarantee__title">14 днів гарантії повернення коштів</h2>
+        <p class="guarantee__text">
+          Спробуй курс без ризику. Якщо протягом <strong>14 днів</strong> не отримаєщ жодного результату та користі для себе — я поверну оплату без зайвих питань.
+        </p>
+        <p class="guarantee__note">
+          Я хочу, щоб ти зосередився на результаті, а не на сумнівах щодо покупки.
+        </p>
+      </div>
+    </div>
+  </section>
+  <!-- ============== /GUARANTEE ============== -->
+
 </main>
+<link rel="stylesheet" href="../shared/css/footer.css"><!-- підключаємо стилі футера -->
+
+<footer class="site-footer-knee">
+  <div class="site-footer__grid">
+    <!-- Бренд -->
+    <div>
+      <div class="site-footer__brand">
+        <img src="../shared/img/logo.png" alt="Bogdan Rehab" class="site-footer__logo">
+        <div>
+          <p class="site-footer__desc">ФОП Латиш Богдан Вячеславович</p>
+          <p class="site-footer__desc">ЄДРПОУ 3392515210</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Контакти з іконками -->
+    <div class="site-footer__cols">
+      <div class="site-footer__col">
+        <h3>Контакти</h3>
+        <div class="site-footer__socials">
+          <a href="bog.rehab@gmail.com" aria-label="Email">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
+              <path d="M2 4h20v16H2V4zm10 7L4 6v12h16V6l-8 5z"/>
+            </svg>
+          </a>
+          <a href="https://t.me/bogdanrehab" target="_blank" rel="noopener" aria-label="Telegram">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
+              <path d="M9.9 16.2 9.8 20c.4 0 .6-.2.8-.4l2-2 4.1 3c.8.4 1.4.2 1.6-.8l3-14c.3-1.2-.4-1.7-1.2-1.4L2.8 9.8c-1.1.4-1 1-.2 1.3l4.6 1.4L18 6.3 9.9 16.2z"/>
+            </svg>
+          </a>
+          <a href="https://www.instagram.com/bogdan.rehab" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
+              <path d="M7 2C4.2 2 2 4.2 2 7v10c0 2.8 2.2 5 5 5h10c2.8 0 5-2.2 5-5V7c0-2.8-2.2-5-5-5H7zm0 2h10c1.7 0 3 1.3 3 3v10c0 1.7-1.3 3-3 3H7c-1.7 0-3-1.3-3-3V7c0-1.7 1.3-3 3-3zm5 2a5 5 0 100 10 5 5 0 000-10zm0 2a3 3 0 110 6 3 3 0 010-6zm5.5-.9a1.1 1.1 0 100 2.2 1.1 1.1 0 000-2.2z"/>
+            </svg>
+          </a>
+          <a href="https://www.facebook.com/Bogdan.rehab" target="_blank" rel="noopener" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
+              <path d="M13 3h4V0h-4c-3.3 0-6 2.7-6 6v3H4v4h3v11h4V13h3.1l.9-4H11V6c0-1.1.9-2 2-2z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Нижня смуга -->
+    <div class="site-footer__bottom">
+      <span>© 2025 Bogdan Rehab</span>
+      <div class="site-footer__legal">
+        <a href="/knee/privacy/">Політика конфіденційності</a>
+        <a href="/knee/offer/">Публічна оферта</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
 <footer class="footer">© Bogdan Rehab</footer>
+<div class="bs-toasts" aria-live="polite" aria-atomic="true"></div>
+<!-- STICKY CTA (внизу екрана) -->
+<a class="bs-sticky-cta" href="#pricing" aria-label="Перейти до курсу">
+  Приєднатись зараз
+</a>
 <script src="../shared/js/base.js"></script>
 <script src="./knee.js"></script>
 </body>

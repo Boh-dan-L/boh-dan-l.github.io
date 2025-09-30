@@ -1,7 +1,16 @@
-
+:root{
+  --c-bg: #0A6670;
+  --c-white: #ffffff;
+  --c-text: #D6EEF1;
+  --c-accent: #F0B429;
+  --c-orange: #FF7A00;
+  --c-orange-dark: #E66E00;
+  --radius: 14px;
+  --container: 1120px;
+}
 /* foot.css — mobile-first hero */
 .hero{
-    max-width: fit-content;
+    /* max-width: fit-content; */
     background:var(--c-bg);
     color:var(--c-white);
     padding:16px 16px 28px;
@@ -85,9 +94,25 @@
     font-size:15px;
     color:var(--c-text); }
 .hero .btn{
+    position: relative;
     width:100%;
     max-width:360px;
     font-size:18px }
+
+.btn-fixed__discount {
+  margin-left: 12px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: #fff;
+  color: #0A6670;
+  border-radius: 10px;
+  padding: 15px 10px;
+  font-size: 16px;
+  font-weight: bold;
+  min-width: 60px;
+  text-align: center;
+}
 /* ===== WHY (цей курс для тебе) ===== */
 .forwho__grid {
   display: grid;
@@ -256,6 +281,7 @@
   .bs-author__content{ font-size:16px; }
   .bs-author__list{ font-size:16px; }
   .bs-author__intro, .bs-author__outro{ font-size:16px; }
+  .bs-author__img{width:50%; height:50%; display:block; object-fit:cover;}
 }
 
 @media (min-width:1024px){
@@ -426,6 +452,10 @@
 .rv-next { right:8px; }
 .rv-nav:disabled { opacity:.4; cursor:default; }
 
+@media (min-width:768px){
+  .rv-carousel { position:relative; max-width:50%; margin:0 auto; }
+}
+
 
 /* Toast: хто приєднався */
 .bs-toast {
@@ -509,8 +539,9 @@
 .days li strong{color:#0A6670}
 
 /* CTA */
-.is-cta{margin-top:20px; text-align:center}
+.is-cta{margin-top:20px; text-align:center; position: relative;}
 .btn.btn--primary{font-weight:800; border-radius:12px; padding:14px 22px}
+
 
 /* Адаптив: трохи ширші відступи на tablet/desktop */
 @media (min-width:480px){
