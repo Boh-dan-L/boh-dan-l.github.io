@@ -1051,7 +1051,7 @@ img{ max-width:100%; height:auto; }
 .hero-knee__bg {
   position: absolute;
   inset: 0;
-  background: url("./img/hero-knee.jpg") center/cover no-repeat;
+  background: url("./img/hero-knee.webp") center/cover no-repeat;
   z-index: 0;
 }
 .hero-knee__overlay {
@@ -1417,10 +1417,10 @@ img{ max-width:100%; height:auto; }
   position:relative; padding-left:26px; color:#375559; font-size:15px;
 }
 .why__list li::before{
-  content:""; position:absolute; left:0; top:6px;
-  width:14px; height:14px; border-radius:4px;
-  background: linear-gradient(135deg, #0f8a96, #0A6670);
-  box-shadow: 0 6px 14px rgba(10,102,112,.25);
+  content:""; position:absolute; left:0; top:0px;
+  width:22px; height:22px; border-radius:4px;
+  background: url(./img/icons-check.png);
+  background-size: contain;
 }
 
 .why__cta{ margin-top: 6px; }
@@ -1527,6 +1527,7 @@ img{ max-width:100%; height:auto; }
 .included__inner{ max-width: var(--container, 1120px); margin: 0 auto; }
 
 .included__title{
+  color:#2b3d43;
   margin: 0 0 8px;
   font-weight: 800;
   font-size: clamp(22px, 4.6vw, 32px);

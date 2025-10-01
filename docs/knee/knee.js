@@ -261,49 +261,51 @@
   const root = document.querySelector('[data-assess]');
   if(!root) return;
 
-  // елементи
   const steps = Array.from(root.querySelectorAll('.assess__step'));
   const resultBox = document.querySelector('[data-assess-result]');
   const progressEl = document.querySelector('[data-assess-progress]');
   const stepTxt = document.querySelector('[data-assess-step]');
 
-  // оновлення прогресу
-  function setStep(i){
+  // універсальна функція, яка МОЖЕ скролити (за бажанням)
+  function setStep(i, {scroll = false} = {}){
     steps.forEach((s,idx)=>s.classList.toggle('is-active', idx===i));
     const pct = Math.round(((i+1)/steps.length)*100);
     if(progressEl) progressEl.style.width = pct+'%';
     if(stepTxt) stepTxt.textContent = `Крок ${i+1} із ${steps.length}`;
-    window.scrollTo({top:root.closest('.bs-assess').offsetTop-12,behavior:'smooth'});
+
+    if (scroll) {
+      const host = root.closest('.bs-assess') || root;
+      const top = host.getBoundingClientRect().top + window.pageYOffset - 12;
+      window.scrollTo({ top, behavior: 'smooth' });
+    }
   }
 
-  // показати перший крок
+  // показати перший крок БЕЗ скролу
   let current = steps.findIndex(s=>s.classList.contains('is-active'));
-  if(current<0) current = 0; setStep(current);
+  if(current<0) current = 0;
+  setStep(current, {scroll:false});
 
-  // живий вивід значень у range
+  // live-значення для range
   root.querySelectorAll('[data-range]').forEach(r=>{
     const out = document.querySelector(`[data-out="${r.name}"]`);
     const upd = ()=>{ if(out) out.textContent = r.value; };
     r.addEventListener('input', upd); upd();
   });
 
-  // навігація кроків
+  // навігація: тепер скролимо ТІЛЬКИ при кліку Далі/Назад
   root.addEventListener('click', (e)=>{
     const next = e.target.closest('[data-next]');
     const prev = e.target.closest('[data-prev]');
-    if(next){ current = Math.min(current+1, steps.length-1); setStep(current); }
-    if(prev){ current = Math.max(current-1, 0); setStep(current); }
+    if(next){ current = Math.min(current+1, steps.length-1); setStep(current, {scroll:true}); }
+    if(prev){ current = Math.max(current-1, 0);           setStep(current, {scroll:true}); }
   });
 
-  // підрахунок
+  // підрахунок результату
   function calc(){
     const fd = new FormData(root);
 
-    // 1) red flags
     const redFlag = ['rf_swelling','rf_locking','rf_acute'].some(k=>fd.get(k)==='yes');
-    if(redFlag){
-      return { type:'warning' };
-    }
+    if(redFlag){ return { type:'warning' }; }
 
     let score = 0;
     const painRest = +(fd.get('pain_rest')||0);
@@ -321,26 +323,25 @@
     if(fd.get('night_pain') === 'yes')     score += 1;
     if(fd.get('morning_stiff') === 'yes')  score += 1;
 
-    // Пороги залишаємо як були
     let stage = 'stage2';
     if(score >= 5) stage = 'stage1';
     else if(score >= 3) stage = 'border';
 
     return { type:'ok', score, stage, painRest, painLoad };
-
   }
 
-  // шаблони результатів
+  // шаблони результатів — CTA тільки через data-scroll-to (без хеша в URL)
   function render(res){
     if(res.type === 'warning'){
       resultBox.hidden = false;
       resultBox.innerHTML = `
-        <div class="assess__warning">Є ознаки, з якими спершу краще звернутися до лікаря (гострий набряк/заклинювання/свіжа травма).
-        Паралельно запустіть <strong>«Нульовий тиждень»</strong>: легкі ізометрії, лімфодренаж, рух у безболісному діапазоні.
+        <div class="assess__warning">
+          Є ознаки, з якими спершу краще звернутися до лікаря (гострий набряк/заклинювання/свіжа травма).
+          Паралельно запустіть <strong>«Нульовий тиждень»</strong>: легкі ізометрії, лімфодренаж, рух у безболісному діапазоні.
         </div>
         <div class="assess__actions">
-          <a href="#pricing" class="btn btn--primary">Перейти до безпечного старту</a>
-          <a href="#faq" class="btn">Подивитись FAQ</a>
+          <a href="#" data-scroll-to="#pricing" class="btn btn--primary">Перейти до безпечного старту</a>
+          <a href="#" data-scroll-to="#faq" class="btn">Подивитись FAQ</a>
         </div>
       `;
       return;
@@ -354,16 +355,17 @@
         p2: 'Що робимо: ізометрії квадрицепса, легка мобільність, лімфодренаж, активація мʼязів.',
         list: ['Уникаємо 1й тиждень: глибокі присідання, різкі кручення, біг/стрибки.',
                'Перетест на 7 день — якщо гострий бал ≤2, переходимо на Етап 2.'],
-        cta: { href: '#pricing', text: 'Почати Етап 1' }
+        cta:  { target:'#pricing', text:'Почати Етап 1' }
       },
       border: {
         badge: 'Прикордонний випадок',
         title: 'Два варіанти старту (рекомендований підсвічено)',
         p1: 'Є ознаки подразнення, але базовий контроль уже непоганий.',
         p2: 'Варіант А (рекомендовано): 7 днів Етап 1 → ретест. Варіант Б: Етап 2 з регресіями.',
-        list: ['Не використовуємо глибокі кути, більше ізометрій на старті.', 'Стежимо, щоб біль не зростав >2 бали по 10 бальній шкалі болю.'],
-        cta: { href: '#pricing', text: 'Етап 1 (рекомендовано)' },
-        cta2:{ href: '#pricing', text: 'Етап 2 (з регресіями)' }
+        list: ['Не використовуємо глибокі кути, більше ізометрій на старті.',
+               'Стежимо, щоб біль не зростав >2 бали по 10 бальній шкалі болю.'],
+        cta:  { target:'#pricing', text:'Етап 1 (рекомендовано)' },
+        cta2: { target:'#pricing', text:'Етап 2 (з регресіями)' }
       },
       stage2: {
         badge: 'Рекомендовано • Етап 2 (Функціональний)',
@@ -371,7 +373,7 @@
         p1: 'Мета: сила, витривалість, баланс, паттерн ходьби.',
         p2: 'Що робимо: гіп-хіндж, присідання до безпечної глибини, баланс/стабільність, прогрес навантаження.',
         list: ['Якщо під час занять біль ↑ >2 бали — повернись тимчасово на Етап 1 на 3–5 днів.'],
-        cta: { href: '#pricing', text: 'Почати Етап 2' }
+        cta:  { target:'#pricing', text:'Почати Етап 2' }
       }
     };
 
@@ -384,20 +386,64 @@
       <p class="assess__p">${b.p2}</p>
       <ul class="assess__list">${b.list.map(li=>`<li>${li}</li>`).join('')}</ul>
       <div class="assess__actions">
-        <a href="${b.cta.href}" class="btn btn--primary">${b.cta.text}</a>
-        ${b.cta2 ? `<a href="${b.cta2.href}" class="btn">${b.cta2.text}</a>` : ''}
+        <a href="#" data-scroll-to="${b.cta.target}" class="btn btn--primary">${b.cta.text}</a>
+        ${b.cta2 ? `<a href="#" data-scroll-to="${b.cta2.target}" class="btn">${b.cta2.text}</a>` : ''}
       </div>
-
       <div class="assess__p" style="margin-top:10px">
         <strong>Бонус-модулі за діагнозами:</strong> підходи для ПФС, коліна бігуна, ACL, меніска, артрозу, тендинопатії.
       </div>
     `;
   }
 
-  // submit
+  // submit → рендеримо, і МОЖЕМО прокрутити до результату
   root.addEventListener('submit', (e)=>{
     e.preventDefault();
     const r = calc();
     render(r);
+    // опційно: притягнути вʼю до блоку результату
+    requestAnimationFrame(()=>{
+      if (!resultBox.hidden) {
+        const top = resultBox.getBoundingClientRect().top + window.pageYOffset - 12;
+        window.scrollTo({ top, behavior:'smooth' });
+      }
+    });
   });
 })();
+
+(function () {
+  // Вимкнути автоповернення позиції скролу браузером
+  if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+  }
+
+  // При старті прибираємо хеш із адреси
+  window.addEventListener('load', function () {
+    if (location.hash) {
+      history.replaceState(null, '', location.pathname + location.search);
+      window.scrollTo(0, 0);
+    }
+  });
+
+  // Плавний скрол за data-scroll-to
+  const OFFSET = 0; // якщо є fixed-header — постав його висоту
+  document.addEventListener('click', function (e) {
+    const a = e.target.closest('a[data-scroll-to]');
+    if (!a) return;
+
+    const id = a.getAttribute('data-scroll-to');
+    if (!id || id.charAt(0) !== '#') return;
+
+    const el = document.querySelector(id);
+    if (!el) return;
+
+    e.preventDefault();
+
+    const top = el.getBoundingClientRect().top + window.pageYOffset - OFFSET;
+    window.scrollTo({ top, behavior: 'smooth' });
+  });
+})();
+
+window.addEventListener('load', function () {
+  // скидаємо позицію, навіть якщо браузер стрибнув
+  window.scrollTo(0, 0);
+});
