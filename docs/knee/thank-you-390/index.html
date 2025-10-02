@@ -19,29 +19,31 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5SKWHT5D"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
-  <script>
-    // захист від повторної відправки при рефреші
-    if (!sessionStorage.getItem('fb_purchase_fired_390')) {
-      window.dataLayer = window.dataLayer || [];
-      const orderId = (new URL(location.href)).searchParams.get('order_id') || ('ORD390_' + Date.now());
+<script>
+(function () {
+  const FIRE_KEY = 'fb_purchase_fired_390';
+  if (sessionStorage.getItem(FIRE_KEY)) return;
 
-      dataLayer.push({
-        event: 'purchase',
-        purchase: {
-          value: 390,
-          currency: 'UAH',
-          content_name: 'Курс базовий',
-          content_type: 'product',
-          content_ids: ['COURSE_BASE'],
-          order_id: orderId,
-          event_id: orderId + '_PIX' // важливо для CAPI deduplication
-        }
-      });
+  window.dataLayer = window.dataLayer || [];
+  const url = new URL(location.href);
+  const orderId = url.searchParams.get('order_id') || ('ORD390_' + Date.now());
 
-      sessionStorage.setItem('fb_purchase_fired_390','1');
+  dataLayer.push({
+    event: 'purchase',
+    purchase: {
+      value: 390,
+      currency: 'UAH',
+      content_name: 'Курс базовий',
+      content_type: 'product',
+      content_ids: ['COURSE_BASE'],
+      order_id: orderId,
+      event_id: orderId + '_PIX'
     }
-  </script>
+  });
 
+  sessionStorage.setItem(FIRE_KEY, '1');
+})();
+</script>
   <main class="thankyou">
     <div class="thankyou__box container">
       <h1 class="thankyou__title">🎉 Дякуємо за покупку!</h1>
