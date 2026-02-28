@@ -1221,7 +1221,8 @@ img{ max-width:100%; height:auto; }
 .hero-knee__price .price-now{ color: var(--accent); font-weight:800; }
 .hero-knee__price .price-old{ opacity:.75; text-decoration:line-through; text-decoration-thickness:2px; }
 
-.hero-knee__proof{ margin: 8px 0 10px; font-size:14px; opacity:.92; }
+.hero-knee__proof{ margin: 20px 0 10px; font-size:20px; opacity:.92; }
+.hero-knee__proof .accent {color: var(--accent); }
 
 .hero-knee__cta{ display:flex; flex-wrap:wrap; gap:12px; margin:12px 0 6px; }
 .hero-knee__cta .btn{ min-width:190px; }
