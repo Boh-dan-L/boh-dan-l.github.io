@@ -343,6 +343,10 @@
           <a href="#" data-scroll-to="#pricing" class="btn btn--primary">Перейти до безпечного старту</a>
           <a href="#" data-scroll-to="#faq" class="btn">Подивитись FAQ</a>
         </div>
+        <div class="assess__expert-cta">
+          <p class="assess__expert-text"><strong>Потрібен персональний розбір?</strong> Можеш отримати індивідуальні рекомендації по своєму коліну від автора курсу.</p>
+          <a href="#" data-scroll-to="#pricing-pro" class="btn btn--primary">Отримати персональний розбір коліна</a>
+        </div>
       `;
       return;
     }
@@ -389,6 +393,10 @@
         <a href="#" data-scroll-to="${b.cta.target}" class="btn btn--primary">${b.cta.text}</a>
         ${b.cta2 ? `<a href="#" data-scroll-to="${b.cta2.target}" class="btn">${b.cta2.text}</a>` : ''}
       </div>
+      <div class="assess__expert-cta">
+        <p class="assess__expert-text"><strong>Хочеш персональний розбір проблеми коліна?</strong> Отримай індивідуальні рекомендації та тактику відновлення від автора курсу.</p>
+        <a href="#" data-scroll-to="#pricing-pro" class="btn btn--primary">Отримати персональний розбір коліна</a>
+      </div>
       <div class="assess__p" style="margin-top:10px">
         <strong>Бонус-модулі за діагнозами:</strong> підходи для ПФС, коліна бігуна, ACL, меніска, артрозу, тендинопатії.
       </div>
@@ -425,7 +433,7 @@
   });
 
   // Плавний скрол за data-scroll-to
-  const OFFSET = 0; // якщо є fixed-header — постав його висоту
+  const OFFSET = 0; // базовий офсет, якщо з'явиться fixed-header
   document.addEventListener('click', function (e) {
     const a = e.target.closest('a[data-scroll-to]');
     if (!a) return;
@@ -433,13 +441,33 @@
     const id = a.getAttribute('data-scroll-to');
     if (!id || id.charAt(0) !== '#') return;
 
-    const el = document.querySelector(id);
+    let el = document.querySelector(id);
     if (!el) return;
 
     e.preventDefault();
 
-    const top = el.getBoundingClientRect().top + window.pageYOffset - OFFSET;
+    const pricingGrid = document.querySelector('#pricing-grid');
+    const isPricingLink = id === '#pricing';
+
+    if (isPricingLink && pricingGrid) {
+      el = pricingGrid;
+    }
+
+    const visualOffset = isPricingLink
+      ? (window.innerWidth <= 768 ? 110 : 150)
+      : (id === '#pricing-pro' ? (window.innerWidth <= 768 ? 80 : 110) : OFFSET);
+
+    const top = el.getBoundingClientRect().top + window.pageYOffset - visualOffset;
     window.scrollTo({ top, behavior: 'smooth' });
+
+    if (id === '#pricing-pro') {
+      const proCard = document.querySelector('#pricing-pro');
+      if (proCard) {
+        proCard.classList.remove('pricing__card--pulse');
+        requestAnimationFrame(() => proCard.classList.add('pricing__card--pulse'));
+        setTimeout(() => proCard.classList.remove('pricing__card--pulse'), 2200);
+      }
+    }
   });
 })();
 

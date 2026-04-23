@@ -1684,3 +1684,26 @@ img{ max-width:100%; height:auto; }
   color: #607d82;
   line-height: 1.4;
 }
+
+
+.assess__expert-cta{
+  margin-top:14px;
+  padding:14px;
+  border:1px solid #E0EFEF;
+  border-radius:14px;
+  background:#F6FAFA;
+}
+.assess__expert-text{
+  margin:0 0 10px;
+  color:#375559;
+}
+
+.pricing__card--pulse{
+  animation: pricingPulse 1.6s ease;
+}
+
+@keyframes pricingPulse {
+  0% { transform: translateY(0); box-shadow: 0 12px 28px rgba(11,46,49,.10); }
+  35% { transform: translateY(-4px); box-shadow: 0 20px 36px rgba(11,46,49,.18); }
+  100% { transform: translateY(0); box-shadow: inherit; }
+}
